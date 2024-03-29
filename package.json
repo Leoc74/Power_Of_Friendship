@@ -1,5 +1,5 @@
 {
-  "name": "",
+  "name": "price_comparison_engine",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -18,12 +18,31 @@
   "bugs": "",
   "keywords": [],
   "author": {
-    "name": "",
+    "name": "Power of Friendship",
     "email": "",
-    "url": ""
+    "url": "https://github.com/Leoc74/Power_Of_Friendship"
   },
   "contributors": [
-
+    {
+      "name": "Leonardo Ciccarelli",
+      "email": "lciccarelli@umass.edu",
+      "github": "Leoc74"
+    },
+    {
+      "name": "Evan Ciccarelli",
+      "email": "eciccarelli@umass.edu",
+      "github": "Eciccarelli0016"
+    },
+    {
+      "name": "Kevin Shang",
+      "email": "kevinshang@umass.edu",
+      "github": "kshang4"
+    },
+    {
+      "name": "Amira Garba",
+      "email": "agarba@umass.edu",
+      "github": "amira2024"
+    }
   ],
   "scripts": {
     "dev": "",
