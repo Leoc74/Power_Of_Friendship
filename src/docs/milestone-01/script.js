@@ -17,3 +17,21 @@ REQUIREMENTS
   ensures that your dynamic aspect responds to user actions, such as clicks, mouseovers, or keyboard input,
   enhancing the interactivity of your proposal document.
 */
+
+const ksinfo = document.getElementById('ksinfo');
+const ksinfobutton = document.getElementById('ksinfo-button');
+
+ksinfobutton.addEventListener("click", ()=>{
+  const x = document.getElementById('x');
+  if(x === null){
+    const div = document.createElement("div");
+    div.setAttribute("id", "x");
+    div.appendChild(document.createTextNode("hello"));
+    ksinfo.appendChild(div);
+    ksinfobutton.textContent = "Minimize";
+  }else{
+    ksinfo.removeChild(x);
+    ksinfobutton.textContent = "Expand";
+  }
+  
+});
