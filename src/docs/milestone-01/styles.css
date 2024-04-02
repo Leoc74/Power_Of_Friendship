@@ -19,3 +19,12 @@ REQUIREMENTS
  This enhances the interactivity and accessibility of your document by providing visual cues to users.
 */
 
+html {
+    scroll-behavior: smooth;
+}
+
+nav a{
+    color: forestgreen;
+    /*Increase spacing behind words*/
+    margin-right: 10px;
+}
