@@ -45,12 +45,12 @@
   ],
   "scripts": {
     "dev": "",
-    "test": ""
-  },
-  "dependencies": {
-
+    "test": "",
+    "milestone-01": "http-server src/docs/milestone-01 -p 3000 -c-1 -o -s"
   },
   "devDependencies": {
-
+    "html-validate": "^8.18.1",
+    "http-server": "^14.1.1",
+    "prettier": "^3.2.5"
   }
 }
