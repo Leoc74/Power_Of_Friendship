@@ -25,62 +25,63 @@
     </nav>
 
     <main>
-        <section id="team">
+        <section id="team" class="section-header">
             <h2>Meet the Team!</h2>
-
+            <div id="grid-container">
             <!--Added section or else div element would go to the bottom of title section-->
-            <section><h3>
-                Leo Ciccarelli
-            </h3>
-            <img src="images\leoc.jpg" width="100">
-            <br>
-            <button id="lcinfo-button" type="submit">Expand</button>
-            <div id="lcinfo"></div>
-           </section>
-
-          <section><h3>
-                Kevin Shang
-            </h3>
-            <img src="images\KevinShangHeadshot.jpeg" width="100">
-            <br>
-            <button id="ksinfo-button" type="submit">Expand</button>
-            <div id="ksinfo"><div>
+                <section class="grid-elem"><h3>
+                    Leo Ciccarelli
+                </h3>
+                <img src="images\leoc.jpg" width="100" alt="Leo C">
+                <br>
+                <button id="lcinfo-button" type="submit">Expand</button>
+                <div id="lcinfo" class="info"></div>
             </section>
 
-            <section><h3>
-                Amira Garba
-            </h3>
-            <img src="images/ami.jpg" width="100">
-            <br>
-            <button id="aginfo-button" type="submit">Expand</button>
-            <div id="aginfo"></div>
-          </section>
+            <section class="grid-elem"><h3>
+                    Kevin Shang
+                </h3>
+                <img src="images\KevinShangHeadshot.jpeg" width="100" alt="Kevin S">
+                <br>
+                <button id="ksinfo-button" type="submit">Expand</button>
+                <div id="ksinfo" class="info"></div>
+                </section>
 
-            <section><h3>
-                Evan Ciccarelli
-            </h3>
-            <img src="images\EvanPicture.jpg" width="100">
-            <br>
-            <button id="ecinfo-button" type="submit">Expand</button>
-            <div id="ecinfo"></div>
-          </section>
+                <section class="grid-elem"><h3>
+                    Amira Garba
+                </h3>
+                <img src="images/ami.jpg" width="100" alt="Amira G">
+                <br>
+                <button id="aginfo-button" type="submit">Expand</button>
+                <div id="aginfo" class="info"></div>
+            </section>
+
+                <section class="grid-elem"><h3>
+                    Evan Ciccarelli
+                </h3>
+                <img src="images\EvanPicture.jpg" width="100" alt="Evan C">
+                <br>
+                <button id="ecinfo-button" type="submit">Expand</button>
+                <div id="ecinfo" class="info"></div>
+            </section>
+            </div>
         </section>
 
-        <section id="overview">
+        <section id="overview" class="section-header">
             <h2>Overview</h2>
             Prix is a very helpful web application that allows online shoppers to do all their browsing all in one site.
             Gone are the days of looking up the price of certain products one site at a time and manually comparing which
-            one is cheapest, or has the best deals. With Prix, shoppers will be able to not only search for any product on 
-            the internet, but will also be given price comparisons, additional information on the product including shipping 
+            one is cheapest, or has the best deals. With Prix, shoppers will be able to not only search for any product on
+            the internet, but will also be given price comparisons, additional information on the product including shipping
             and/or possible deals, and the ability to filter out and sort products with given criteria. When the shopper finds
-            a product they like, a link will be availableto direct them to the external site for purchase. Find whatever your 
+            a product they like, a link will be availableto direct them to the external site for purchase. Find whatever your
             heart desires, all in one tab, with Prix.
 
         </section>
 
         <hr>
 
-        <section id="application-parts">
+        <section id="application-parts" class="section-header">
             <h2>Application Parts</h2>
 
             <h3>Filtering and Sorting Options:</h3>
@@ -92,11 +93,10 @@
                    location, customer ratings, etc</p>
 
             <h3>Product Detail Frames:</h3>
-            <p> When Prix users search up a product, the results will be shown in an informative and clean manner. Each individual product will have its own frame which will display important information, such as price, original product site, the number of confirmed purchases, and more. Additional information will be available and displayed when the user hovers over the frame.
-            
+            <p> When Prix users search up a product, the results will be shown in an informative and clean manner. Each individual product will have its own frame which will display important information, such as price, original product site, the number of confirmed purchases, and more. Additional information will be available and displayed when the user hovers over the frame.</p>
             <h3>Product Comparison Tool:</h3>
             <p> When users find a certain product they may consider purchasing, they can click the product to save it to the Product Comparison Tool. If more than one product is selected, our tool will automatically create a comprehensive report that will list the individual products’ information, highlight pros and cons, and give our recommendation on which product to purchase, via our own algorithm.
-                Analytic and Insight Suggestions: Prix collects vital information about products and how well they sell in order to provide suggestions and recommendations for future shoppers. When a customer finds a product and completes a purchase, that record of sale will be </p>
+                Analytic and Insight Suggestions: Prix collects vital information about products and how well they sell in order to provide suggestions and recommendations for future shoppers. When a customer finds a product and completes a purchase, that record of sale will be
             </p>
 
             <h3>Reporting and Flagging:</h3>
@@ -105,37 +105,35 @@
             </p>
         </section>
         <hr>
-        <section id="data-requirements">
+        <section id="data-requirements" class="section-header">
             <h2>Data Requirements</h2>
             <h3>Product info </h3>
-            The foundation of our application lies in comprehensive product information sourced from 
+            The foundation of our application lies in comprehensive product information sourced from
             multiple clothing shopping websites. This includes details such as product name, description,
-             brand, size availability, color options, material composition, and pricing. Ensuring the 
-             accuracy and completeness of this data is crucial for enabling users to make informed 
+             brand, size availability, color options, material composition, and pricing. Ensuring the
+             accuracy and completeness of this data is crucial for enabling users to make informed
              purchasing decisions. Our wireframe for product information displays a structured layout,
-              emphasizing clarity and ease of navigation, ensuring users can quickly access vital details 
+              emphasizing clarity and ease of navigation, ensuring users can quickly access vital details
               about each item.
-            
             <h3>User preference</h3>
-            Understanding user preferences is essential for delivering personalized recommendations. 
-            We collect data on user preferences, including preferred price range, material preferences 
+            Understanding user preferences is essential for delivering personalized recommendations.
+            We collect data on user preferences, including preferred price range, material preferences
             (cotton, polyester), preferred colors, preferred brands, and any specific keywords or styles
             users are searching for. By leveraging this information, we can tailor search results to match
-            each user's unique preferences. The wireframe for user preferences features intuitive 
+            each user's unique preferences. The wireframe for user preferences features intuitive
             controls and customizable options, empowering users to refine their search criteria effortlessly.
 
             <h3>Data</h3>
-            Our application relies on scraping data from various clothing shopping websites to gather 
+            Our application relies on scraping data from various clothing shopping websites to gather
             real-time pricing information and product availability. This data includes product listings, prices,
              discounts, and stock availability. We continuously update and monitor this data to ensure that
-              users are presented with the most current and accurate information available. The wireframe for 
-              data collection showcases an efficient data retrieval process, emphasizing speed and reliability 
+              users are presented with the most current and accurate information available. The wireframe for
+              data collection showcases an efficient data retrieval process, emphasizing speed and reliability
               to provide users with up to date information seamlessly.
-            
             <h3>Search Query</h3>
             Analyzing user search queries provides valuable insights into emerging trends and popular clothing items.
              We collect and analyze search query data to identify patterns, popular brands, trending styles, and
-            frequently searched keywords. This information helps us optimize our search algorithms and enhance 
+            frequently searched keywords. This information helps us optimize our search algorithms and enhance
             the overall user experience. The wireframe for search query analysis displays a user-friendly interface
             for exploring search trends, enabling users to discover new styles and stay informed about the latest
             fashion trends effortlessly.
@@ -143,7 +141,7 @@
 
         </section>
         <hr>
-        <section id="wire-frames">
+        <section id="wire-frames" class="section-header">
             <h2>Wire Frames</h2>
             <div>
                 <img src="images\HomePage.jpg" width="600" alt="Home Page">
@@ -170,14 +168,14 @@
             </div>
         </section>
         <hr>
-        <section id="real-world">
+        <section id="real-world" class="section-header">
             <h2>Real-World Connection</h2>
             In our world today, life is so fast-paced and dynamic, with our days full of ToDo’s and responsibilities. With the addition of the internet, we humans simply don’t have the time to sift through countless sites to find the best deals on products and services. This is inefficient, daunting, and sometimes straight up annoying. Prix offers a solution by taking the work out of online shopping, whilst maintaining the thrill and excitement of finally finding THE one. 
 Anyone can experience the services of Prix, from fresh undergraduates to experienced employees; from first-time parents to teachers and caretakers. Our simple, informative, and accessible website can assist anyone in finding the right product for their needs, minus the time wasted scrolling through different websites and tabs.
 
         </section>
         <hr>
-        <section id="integrative-experience">
+        <section id="integrative-experience" class="section-header">
             <h2>Integrative Experience</h2>
             This project will require us to pull from lots of previous knowledge obtained from our time so far here at UMass. From our basic computer science classes like CS 121 and CS 187 to more advanced ones like CS 220 and CS 230 the knowledge from these courses will be useful one way or another. For example in CS 220 we learned JavaScript, Promises, and perhaps most importantly good coding practices which are integral for creating a project on a larger scale. This project will also allow us to link multiple skills together, old and new. Combining HTML and CSS which were primarily learned in this course with JavaScript which was largely learned in CS 220, and whatever we need to learn as we go to make the project work. 
             Furthermore an emphasis is placed on solving a real world problem. Not only is our web application designed to solve a real-world issue but the creation of a website itself is something very common in the real-world which is essential for a successful integrative experience.
