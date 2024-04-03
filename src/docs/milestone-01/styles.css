@@ -75,6 +75,11 @@ h2 {
   justify-content: center;
 }
 
+#wire-frames div img{
+    display: block;
+    margin: 0 auto;
+}
+
 #team {
     background-color: #f9f9f9;
     padding: 20px;
