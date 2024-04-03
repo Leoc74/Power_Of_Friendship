@@ -68,53 +68,19 @@ h2 {
     color: #333;
 }
 
-/* Team section styles */
+.section-header h2 {
+  color: rgb(222, 112, 112);
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
 #team {
     background-color: #f9f9f9;
     padding: 20px;
 }
 
-#overview h2 {
-  color: rgb(222, 112, 112);
-  align-items: center;
-  display: flex;
-  justify-content: center;
-}
-
-#application-parts h2 {
-  color: rgb(222, 112, 112);
-  align-items: center;
-  display: flex;
-  justify-content: center;
-}
-
-#data-requirements h2 {
-  color: rgb(222, 112, 112);
-  align-items: center;
-  display: flex;
-  justify-content: center;
-}
-
-#wire-frames h2 {
-  color: rgb(222, 112, 112);
-  align-items: center;
-  display: flex;
-  justify-content: center;
-}
-
-#real-world h2 {
-  color: rgb(222, 112, 112);
-  align-items: center;
-  display: flex;
-  justify-content: center;
-}
-
-#integrative-experience h2 {
-  color: rgb(222, 112, 112);
-  align-items: center;
-  display: flex;
-  justify-content: center;
-}#grid-container{
+#grid-container{
     display: grid;
     grid-template-columns: repeat(4, 3.8in);
 
