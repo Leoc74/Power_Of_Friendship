@@ -1,0 +1,146 @@
+/*CSS file for milestone 1*/
+/* 
+REQUIREMENTS
+
+1. **Element Selector Rule**: Define a CSS rule that targets a specific HTML element, 
+ such as **`p`** or **`h1`**, to apply universal styling features like font size or text 
+ color to all instances of that element within your document.
+2. **ID Selector Rule**: Craft a CSS rule targeting a unique id within your HTML document, 
+ such as **`#overview`**, allowing you to apply specific styling to that section alone, distinguishing 
+ it visually from other parts of the document.
+3. **Class Selector Rule**: Utilize a CSS rule applied to a class, enabling you to style 
+ a group of elements that share the same class attribute. This is useful for applying consistent
+ styling to elements that perform similar functions, like buttons or section headers.
+4. **Nested-Tag / Sub-Element Selector Rule**: Implement a CSS rule that targets elements
+ within a specific context, for example, styling **`<a>`** tags differently when they appear
+ within the **`<nav>`** element versus elsewhere in the document.
+5. **Pseudo-Class Selector Rule**: Include a rule that uses a pseudo-class, such as 
+ **`a:hover`** or **`a:focus`**, to define styles for an element in a particular state. 
+ This enhances the interactivity and accessibility of your document by providing visual cues to users.
+*/
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header styles */
+header {
+    background-color: rgb(222, 112, 112);
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+#home{
+    padding-left: 10px;
+    width: 100px;
+    float: left;
+}
+.navBarGrid {
+    display: grid;
+    background-color: #f4f4f4;
+    padding: 10px 0;
+    text-align: center;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-gap: 10px; /* Gap between grid items */
+    align-items: center; /* Vertically center items */
+    font-size: 20px
+}
+.navBarGrid a {
+    text-decoration:none;
+    color: #333;
+    padding: 10px 20px;
+}
+
+.navBarGrid a:hover {
+    background-color: #ddd;
+}
+
+#homeSearchDiv{
+    /*upper padding */
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+}
+#homeSearchBar {
+    width: 500px; /* Set the width of the text field */
+    height: 60px; /* Set the height of the text field */
+    padding: 12px; /* Add padding for better visual appearance */
+    border: 1px solid #ccc; /* Add a border to the text field */
+    border-radius: 5px; /* Add rounded corners to the border */
+    font-size: 30px; /* Set the font size of the text */
+  }
+/* Navigation styles */
+nav {
+    background-color: #f4f4f4;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav a {
+    text-decoration:none;
+    color: #333;
+    padding: 10px 20px;
+}
+
+nav a:hover {
+    background-color: #ddd;
+}
+
+/* Main content styles */
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #333;
+}
+
+.section-header h2 {
+  color: rgb(222, 112, 112);
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+#wire-frames div img{
+    display: block;
+    margin: 0 auto;
+}
+
+#team {
+    background-color: #f9f9f9;
+    padding: 20px;
+}
+
+#grid-container{
+    display: grid;
+    grid-template-columns: repeat(4, 3.8in);
+
+}
+
+.grid-elem {
+    padding: 10px;
+    background-color: rgb(222, 112, 112); /* border shorthand */
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.grid-elem h3, .grid-elem div {
+    color: white;
+}
