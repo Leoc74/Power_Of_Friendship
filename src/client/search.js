@@ -1,6 +1,8 @@
 let sort_button = document.getElementById("sort-button");
 let sort_button_direction = false;
 
+let search_box = document.getElementById("search-box");
+
 sort_button.addEventListener("click", function () {
   if (sort_button_direction) {
     this.value = "Sort by Price: ↑";
@@ -8,4 +10,10 @@ sort_button.addEventListener("click", function () {
     this.value = "Sort by Price: ↓";
   }
   sort_button_direction = !sort_button_direction;
+});
+
+search_box.addEventListener("keyup", function (key) {
+  if (key.key === "Enter") {
+    console.log("Enter");
+  }
 });

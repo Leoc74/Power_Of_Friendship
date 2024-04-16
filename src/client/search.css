@@ -41,7 +41,7 @@ nav {
 
 #search-container label {
     margin-right: 10px; /* Add space between label and input */
-    font-size: 16px; /* Increase font size */
+    font-size: 20px; /* Increase font size */
     color: #333; /* Text color */
     font-weight: bold; /* Bold font weight */
 }
@@ -52,6 +52,11 @@ nav {
     padding: 15px 15px; /* Increase padding to make the search box larger */
     border-radius: 5px;
     margin-right: 10px; /* Add margin to separate from the filter button */
+    width: 500px; /* Set the width of the text field */
+    padding: 12px; /* Add padding for better visual appearance */
+    border: 1px solid #ccc; /* Add a border to the text field */
+    border-radius: 5px; /* Add rounded corners to the border */
+    font-size: 20px; /* Set the font size of the text */
 }
 
 #search-container input[type="button"] {
@@ -62,6 +67,7 @@ nav {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    max-width: 50%;
 }
 
 #search-container input[type="button"]:hover {
