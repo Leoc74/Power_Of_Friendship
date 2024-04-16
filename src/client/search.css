@@ -112,3 +112,34 @@ nav {
     background-color: #ddd;
 }
 
+
+#results-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Automatically fit columns with minimum 250px and maximum 1fr */
+    justify-content: center; /* Center items horizontally */
+    grid-gap: 2vw;
+
+    margin-top: 20px; /* Add space between navbar and search container */
+    background-color: #f2f2f2; /* Match the background color to the rest of the page */
+    padding-top: 20px;
+    padding-right: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+}
+
+/* Style for each search result */
+.result {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    /*margin-bottom:10px; /* Add space between each search result */
+    text-align: center;
+    max-width: 100%; /* Ensure the result does not exceed the width of the container */
+    width: 100%; /* Ensure each result takes up the full width */
+}
+.result img {
+    max-width: 100%; /* Ensure the image does not exceed the width of the result */
+    max-height: 200px; /* Limit the height of the image */
+    object-fit: cover; /* Maintain aspect ratio and fill container */
+}
