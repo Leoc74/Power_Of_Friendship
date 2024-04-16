@@ -4,27 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prix: Login Page</title>
+    <link rel="stylesheet" href="login.css">
+    <script src="https://kit.fontawesome.com/85c080bd45.js" crossorigin="anonymous"></script>
+    <script type="module" src="login.js" defer></script>
 </head>
 <body>
     <header id="header">
-        <nav>
-            <a>Prix: Logo</a>
-            <a>Search</a>
-            <a>Login</a>
-            <a>About Us</a>
-        </nav>
+      <nav>
+        <a class="nav-left" href="#">Prix</a>
+        <div class="nav-right">
+            <a class="nav-link" href="#">About</a>
+            <a class="nav-link" href="#">Login</a>
+        </div>
+    </nav>
     </header>
     <div id="login-view">
         <h2 id="login-header">
             Login
         </h2>
-        <label for="username">Username:</label>
-        <input id="username" type="text">
-        
-        <label for="password">Password:</label>
-        <input id="password" type="text">
-
-        <input id="google" type="button" value="Login with Google">
+        <form>
+        <div class="form-group">
+        <label for="username"></label>
+        <input id="username" type="text" placeholder="Username">
+        </div>
+        <div class="form-group">
+        <label for="password"></label>
+        <input id="password" type="text" placeholder="Password">
+        </div>
+        <div class="forgot-password-signup">
+          <a href="#" class="forgot-password">Forgot password?</a>
+          <a href="#" class="signup">Sign Up</a>
+        </div>
+        <button type="submit" class="login-button">Login</button>
+        <button class="google-button" onclick="loginWithGoogle()">
+          <i class="fa-brands fa-google"></i>
+          <span>Login with Google</span>
+      </button>
+      </form>
     </div>
     
 </body>
