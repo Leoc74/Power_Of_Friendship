@@ -67,7 +67,7 @@ nav {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    max-width: 50%;
+    max-width: 100%;
 }
 
 #search-container input[type="button"]:hover {
@@ -148,4 +148,45 @@ nav {
     max-width: 100%; /* Ensure the image does not exceed the width of the result */
     max-height: 200px; /* Limit the height of the image */
     object-fit: cover; /* Maintain aspect ratio and fill container */
+}
+
+/* Dropdown container */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+    /* Other styles remain unchanged */
+    width: 100%; /* Set the dropdown content width to match the button */
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+/* Show the dropdown content when the button is hovered over */
+.dropdown:hover .dropdown-content {
+    display: block;
 }
