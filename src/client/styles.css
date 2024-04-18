@@ -80,21 +80,47 @@ header {
   }
 /* Navigation styles */
 nav {
-    background-color: #f4f4f4;
-    padding: 10px 0;
+    background-color: rgb(222, 112, 112);
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Align items vertically */
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .nav-left {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+    font-size: 20px;
+  }
+  
+  .nav-right {
+    display: flex;
+  }
+  
+  .nav-link {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+    transition: color 0.3s ease;
+    font-size: 20px;
+  }
+  
+  .nav-link:hover {
+    color: #ddd; /* Light gray hover color */
+  }
+/* Styling for Prix main title*/
+#prixTitle{
+    background-color: rgb(222, 112, 112);
+    color: white;
+    padding-bottom: 20px;
+    padding-top: 0px;
     text-align: center;
+    font-size:50px;
+    font-weight: bold;
+    
 }
-
-nav a {
-    text-decoration:none;
-    color: #333;
-    padding: 10px 20px;
-}
-
-nav a:hover {
-    background-color: #ddd;
-}
-
 /* Main content styles */
 main {
     padding: 20px;

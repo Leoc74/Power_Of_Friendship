@@ -23,6 +23,15 @@ document.addEventListener("DOMContentLoaded", () => {
   // Initialize with the home view
   navigate("homeView");
 
+  //If we press enter in the search bar navigate to the search page (and do a search later)
+  //For now we just go to profileView, will be changed once we have a searchView
+  const homeSearchBar = document.getElementById("homeSearchBar");
+  homeSearchBar.addEventListener("keypress", ()=>{
+    //console.log FOR DEBUGGING
+    //console.log("MADE IT"); 
+    navigate("profileView");
+  })
+
   // Assuming your images are within a container with the class
   // 'image-container'
   document.querySelectorAll(".image-container img").forEach((img) => {
