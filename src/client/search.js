@@ -5,6 +5,11 @@ let search_box = document.getElementById("search-box");
 
 let results_container = document.getElementById("results-container");
 
+window.addEventListener("load", async () => {
+  let db = new PouchDB("mydb");
+  console.log(db);
+});
+
 /**
  * Event Listener for the sort_button. Should sort the outputs by price increasing/decreasing when pressed
  */
