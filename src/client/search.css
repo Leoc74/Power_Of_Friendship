@@ -177,7 +177,7 @@ nav {
 }
 
 /* Change color of dropdown links on hover */
-.dropdown-content a:hover {
+.dropdown-content label:hover {
     background-color: #ddd;
 }
 
