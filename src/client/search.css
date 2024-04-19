@@ -27,7 +27,7 @@ nav {
   }
   
   .nav-link:hover {
-    color: #ddd; /* Light gray hover color */
+    color: #000; /* Light gray hover color */
   }
   
   #search-container {

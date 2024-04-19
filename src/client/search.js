@@ -27,8 +27,8 @@ sort_button.addEventListener("click", function () {
  * Currently populates the results container with the inputted number of results when
  * Enter key is pressed
  */
-search_box.addEventListener("keyup", function (key) {
-  if (key.key === "Enter") {
+search_box.addEventListener("keyup", function (event) {
+  if (event.key === "Enter") {
     let message = Number(search_box.value);
     console.log(message);
     populateSearches(message);
