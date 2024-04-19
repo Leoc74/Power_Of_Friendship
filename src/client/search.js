@@ -1,3 +1,5 @@
+import * as db from "./db.js";
+
 let sort_button = document.getElementById("sort-button");
 let sort_button_direction = false;
 
@@ -6,8 +8,8 @@ let search_box = document.getElementById("search-box");
 let results_container = document.getElementById("results-container");
 
 window.addEventListener("load", async () => {
-  let db = new PouchDB("mydb");
-  console.log(db);
+  console.log("here");
+  await db.printData();
 });
 
 /**
