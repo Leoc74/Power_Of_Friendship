@@ -134,13 +134,53 @@ h2 {
     color: #333;
 }
 
-.section-header h2 {
-  color: rgb(222, 112, 112);
-  align-items: center;
-  display: flex;
-  justify-content: center;
+/*Home page styling*/
+
+.container {
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+#homeSearchDiv {
+    margin-bottom: 20px;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.section-header h2 {
+    color: rgb(222, 112, 112);
+    font-size: 32px;
+}
+
+#prix-description {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/*Stlying for the Carousel*/
+.carousel-container {
+    max-width: 800px;
+    margin: 20px auto;
+    overflow: hidden;
+}
+
+.carousel-slide {
+    display: flex;
+    width: 300%; /* Three images side by side */
+    transition: transform 0.5s ease;
+}
+
+.carousel-slide img {
+    width: 400px; /* Adjust the width of the images */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover;
+}
 #wire-frames div img{
     display: block;
     margin: 0 auto;
