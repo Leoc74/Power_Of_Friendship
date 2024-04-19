@@ -27,7 +27,7 @@ nav {
   }
   
   .nav-link:hover {
-    color: #ddd; /* Light gray hover color */
+    color: #000; /* Light gray hover color */
   }
   
   #search-container {
@@ -39,7 +39,7 @@ nav {
     text-align: center; /* Center the contents horizontally */
 }
 
-#search-container label {
+#search-container label[for="search-box"] {
     margin-right: 10px; /* Add space between label and input */
     font-size: 20px; /* Increase font size */
     color: #333; /* Text color */
@@ -159,12 +159,7 @@ nav {
 
 /* Dropdown content (hidden by default) */
 .dropdown-content {
-    /* Other styles remain unchanged */
-    width: 100%; /* Set the dropdown content width to match the button */
-}
-
-/* Dropdown content (hidden by default) */
-.dropdown-content {
+    width: 100%;
     display: none;
     position: absolute;
     background-color: #f9f9f9;
@@ -174,7 +169,7 @@ nav {
 }
 
 /* Links inside the dropdown */
-.dropdown-content a {
+.dropdown-content label{
     color: black;
     padding: 12px 16px;
     text-decoration: none;
@@ -182,7 +177,7 @@ nav {
 }
 
 /* Change color of dropdown links on hover */
-.dropdown-content a:hover {
+.dropdown-content label:hover {
     background-color: #ddd;
 }
 

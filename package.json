@@ -53,5 +53,9 @@
     "html-validate": "^8.18.1",
     "http-server": "^14.1.1",
     "prettier": "^3.2.5"
+  },
+  "dependencies": {
+    "pouchdb": "^8.0.1",
+    "tailwindcss": "^3.4.3"
   }
 }

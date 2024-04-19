@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="search.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <script type="module" src="search.js" defer></script>
+    <script src="//cdn.jsdelivr.net/npm/pouchdb@8.0.1/dist/pouchdb.min.js"></script>
 </head>
 <body>
     <nav>
@@ -26,20 +27,22 @@
             <div class="dropdown">
                 <input type="button" id="filter-button" value="Filter">
                 <div class="dropdown-content">
-                    <a href="#">Option 1</a>
-                    <a href="#">Option 2</a>
-                    <a href="#">Option 3</a>
+                    <label class="dropdown-item">
+                        <input type="checkbox" id="option1">
+                        Option 1
+                    </label>
+                    <label class="dropdown-item">
+                        <input type="checkbox" id="option2">
+                        Option 2
+                    </label>
+                    <label class="dropdown-item">
+                        <input type="checkbox" id="option3">
+                        Option 3
+                    </label>
                 </div>
             </div>
             
         </div>
-        <!--<div class="sidebar">
-            <h2>Filters</h2>
-            <a href="#">Link 1</a>
-            <a href="#">Link 2</a>
-            <a href="#">Link 3</a>
-             Add more links as needed 
-        </div>-->
         <div id="results-container">
             <div class="result">
                 <a href="">
