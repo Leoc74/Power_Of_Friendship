@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prix: Home Page</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </head>
 <body>
     <nav>
@@ -25,15 +25,40 @@
     </div>
     -->
 
-    <div id = "homeSearchDiv">
-        <input type = "text" id = "homeSearchBar" placeholder="Begin Searching Now">
-    </div>
      
 
     <div id="views">      
         <div id="homeView" class="view">
-            <h1>Welcome Home</h1>
-            <p>This is the home page of our simple multi-view web application. Here, you can navigate to different sections of the website using the navigation bar above.</p>
+            <div class="container">
+                <div id="homeSearchDiv">
+                    <input type="text" id="homeSearchBar" placeholder="Begin Searching Now">
+                </div>
+            
+                <div class="section-header">
+                    <h2>What is Prix?</h2>
+                </div>
+            
+                <p id="prix-description">
+                    Prix is a very helpful web application that allows online shoppers to do all their browsing all in one site.
+                    Gone are the days of looking up the price of certain products one site at a time and manually comparing which
+                    one is cheapest, or has the best deals. With Prix, shoppers will be able to not only search for any product on
+                    the internet, but will also be given price comparisons, additional information on the product including shipping
+                    and/or possible deals, and the ability to filter out and sort products with given criteria. When the shopper finds
+                    a product they like, a link will be available to direct them to the external site for purchase. Find whatever your
+                    heart desires, all in one tab, with Prix.
+                </p>
+            </div>
+            <div class="carousel-container">
+                <div class="carousel-slide">
+                    <img src="images/testImg.jpg" alt="Image 1">
+                    <img src="images/testImg2.jpg" alt="Image 2">
+                    <img src="images/testImg.jpg" alt="Image 3">
+                </div>
+                <button id="prevBtn">Previous</button>
+                <button id="nextBtn">Next</button>
+            </div>
+            
+            
         </div>
         <div id="profileView" class="view" style="display:none">
             <h1>Your Profile</h1>
@@ -58,7 +83,6 @@
                 <img src="https://via.placeholder.com/215" alt="App Logo" style="border-radius:8px;">
             </div>
         </div>
-    </div>
     </div>    
 </body>
 </html>
