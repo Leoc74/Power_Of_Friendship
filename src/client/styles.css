@@ -165,22 +165,50 @@ h2 {
 
 /*Stlying for the Carousel*/
 .carousel-container {
-    max-width: 800px;
+    position: relative;
+    max-width: 600px; /* 1.5 times the original width */
     margin: 20px auto;
     overflow: hidden;
 }
 
 .carousel-slide {
     display: flex;
-    width: 300%; /* Three images side by side */
+    width: 200%; /* Three times the width of a single image */
     transition: transform 0.5s ease;
 }
 
 .carousel-slide img {
-    width: 400px; /* Adjust the width of the images */
+    width: 50%; /* Half the width of a single image */
     height: auto; /* Maintain aspect ratio */
     object-fit: cover;
 }
+
+.arrow-container {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between; /* Space the arrows */
+    width: 100%; /* Take full width */
+}
+
+.arrow {
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.prevArrow {
+    margin-right: auto; /* Push to the left */
+}
+
+.nextArrow {
+    margin-left: auto; /* Push to the right */
+}
+
+
 #wire-frames div img{
     display: block;
     margin: 0 auto;
