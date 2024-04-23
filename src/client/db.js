@@ -5,11 +5,32 @@ const db = new PouchDB("search-data");
 //db.put({ _id: "2", title: "Header (1)" });
 
 export async function printData() {
-  console.log(db);
-  let data = await db.get("0");
-  console.log(data);
-  let results = await db.allDocs({ include_docs: true, attachments: true });
-  console.log(results.rows);
+  let data = await getDocument("20");
+  //console.log(data);
+  //let results = await db.allDocs({ include_docs: true, attachments: true });
+  //console.log(results.rows);
+}
+
+async function getDocument(id) {
+  try {
+    const doc = await db.get(id);
+    console.log(doc);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+async function checkDocExist(id){
+  try{
+    await db.get(id);
+    return true;
+  }catch(error){
+    if(error.name === "not_found"){
+      return false;
+    }else{
+      throw error;
+    }
+  }
 }
 
 /**
@@ -27,13 +48,17 @@ export async function printData() {
  * database connectivity issues.
  */
 export async function saveProduct(id, title, content, imagePath, link) {
-  await db.put({ 
-    _id: id, 
-    title: title,
-    content: content,
-    imagePath: imagePath,
-    link: link
-  });
+  if(!checkDocExist(id)){
+    await db.put({ 
+      _id: id, 
+      title: title,
+      content: content,
+      imagePath: imagePath,
+      link: link
+    });
+  }else{
+    console.log("id already exists!");
+  }
 }
 
 /**
