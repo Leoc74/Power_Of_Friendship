@@ -6,6 +6,7 @@
     <title>Prix: Home Page</title>
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
+    <script src="https://kit.fontawesome.com/85c080bd45.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <nav>
@@ -64,16 +65,6 @@
             
         </div>
         <div id="profileView" class="view" style="display:none">
-            <h1>Your Profile</h1>
-            <p>This section could display user profile information. For now, here's a list of some hobbies:</p>
-            <ul>
-                <li>Coding</li>
-                <li>Hiking</li>
-                <li>Reading</li>
-                <li>Photography</li>
-            </ul>
-        </div>
-        <div id="aboutView" class="view" style="display:none">
             <h1>About This App</h1>
             <p>This app demonstrates a simple way to navigate between different views using vanilla JavaScript, HTML, and CSS. It's designed as an educational tool to help understand the basics of web development.</p>
             <p>Here's a placeholder for an app logo or image:</p>
@@ -84,6 +75,32 @@
                 <img src="https://via.placeholder.com/195" alt="App Logo" style="border-radius:8px;">
                 <img src="https://via.placeholder.com/205" alt="App Logo" style="border-radius:8px;">
                 <img src="https://via.placeholder.com/215" alt="App Logo" style="border-radius:8px;">
+            </div>
+        </div>
+        <div id="aboutView" class="view" style="display:none">
+            <div id="login-view">
+                <h2 id="login-header">
+                    Login
+                </h2>
+                <form>
+                <div class="form-group">
+                <label for="username"></label>
+                <input id="username" type="text" placeholder="Username">
+                </div>
+                <div class="form-group">
+                <label for="password"></label>
+                <input id="password" type="password" placeholder="Password">
+                </div>
+                <div class="forgot-password-signup">
+                <a href="#" class="forgot-password">Forgot password?</a>
+                <a href="#" class="signup">Sign Up</a>
+                </div>
+                <button type="submit" class="login-button">Login</button>
+                <button class="google-button" onclick="loginWithGoogle()">
+                <i class="fa-brands fa-google"></i>
+                <span>Login with Google</span>
+            </button>
+            </form>
             </div>
         </div>
     </div>    
