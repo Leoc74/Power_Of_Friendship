@@ -10,6 +10,8 @@ let results_container = document.getElementById("results-container");
 window.addEventListener("load", async () => {
   console.log("here");
   await db.printData();
+  await db.saveProduct("20", "test title", "test content", "src\client\images\testImg.jpg", "https://chat.openai.com/c/8166c8ce-e0c5-479b-8467-164139b9191c");
+  await db.printData();
 });
 
 /**
