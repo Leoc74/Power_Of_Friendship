@@ -21,7 +21,7 @@
     "name": "Power of Friendship",
     "url": "https://github.com/Leoc74/Power_Of_Friendship"
   },
-  "contributors": [
+  "collaborators": [
     {
       "name": "Leonardo Ciccarelli",
       "email": "lciccarelli@umass.edu",
@@ -45,12 +45,18 @@
   ],
   "scripts": {
     "dev": "",
-    "test": ""
-  },
-  "dependencies": {
-
+    "test": "",
+    "validate-html": "html-validate src/**/*.html",
+    "milestone-01": "http-server src/docs/milestone-01 -p 3000 -c-1 -o -s",
+    "milestone-02": "http-server src/client -p 3000 -c-1 -o -s"
   },
   "devDependencies": {
-
+    "html-validate": "^8.18.1",
+    "http-server": "^14.1.1",
+    "prettier": "^3.2.5"
+  },
+  "dependencies": {
+    "pouchdb": "^8.0.1",
+    "tailwindcss": "^3.4.3"
   }
 }

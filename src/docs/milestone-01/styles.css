@@ -68,11 +68,44 @@ h2 {
     color: #333;
 }
 
-/* Team section styles */
+.section-header h2 {
+  color: rgb(222, 112, 112);
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+#wire-frames div img{
+    display: block;
+    margin: 0 auto;
+}
+
 #team {
     background-color: #f9f9f9;
     padding: 20px;
 }
+<<<<<<< HEAD
 #overview{
     align-items: center;
+=======
+
+#grid-container{
+    display: grid;
+    grid-template-columns: repeat(4, 3.8in);
+
+}
+
+.grid-elem {
+    padding: 10px;
+    background-color: rgb(222, 112, 112); /* border shorthand */
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.grid-elem h3, .grid-elem div {
+    color: white;
+>>>>>>> 46b200fd8aaff8b9e6f2e20e6f1d90c966b6f2e2
 }

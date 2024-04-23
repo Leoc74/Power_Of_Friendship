@@ -1,0 +1,130 @@
+nav {
+  background-color: rgb(222, 112, 112);
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Align items vertically */
+  font-family: 'Roboto', sans-serif;
+}
+
+.nav-left {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px;
+  font-size: 20px;
+}
+
+.nav-right {
+  display: flex;
+}
+
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px;
+  transition: color 0.3s ease;
+  font-size: 20px;
+}
+
+.nav-link:hover {
+  color: #ddd; /* Light gray hover color */
+}
+
+/*styling "Login" above the form*/
+#login-header {
+  text-align: center; /*centers*/
+  color: rgb(222, 112, 112); /*font color*/
+  font-size: 30px; /*font size*/
+}
+
+/*styling the login box */
+#login-view {
+  text-align: center; /* centers box */
+  width: 300px; /* sets width to 300px wide */
+  margin: 0 auto; /*sets top bottom margins to 0, and automatically centers left and right margins*/
+  padding: 20px; /* padding to 20px */
+  border: 1px solid #ccc; /* sets a solid 1 pixel thick border of color #ccc */
+  border-radius: 25px; /* rounds out the border */
+  box-shadow: 0 0 10px rgba(0,0,0,0.1); /* shadow of the box */
+  margin-top: 50px; /* brings the login box down 50 px */
+  background-color: #f2f2f2; /* background color of the box */
+}
+
+#login-view h2 {
+  text-align: center; /* centers Login */
+  margin-bottom: 20px; /* sets bottom margin to 20px */
+}
+
+/* styling the username and password fields */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block; /* ensures username and password have their own lines */
+  margin-bottom: 5px; /* sets bottom margin to 5px */
+}
+
+.form-group input[type="text"],
+.form-group input[type="password"] {
+  width: 100%; /* sets width of input */
+  padding: 10px; /* sets padding to 10px */
+  border: 1px solid #ccc; /* adds solid, 1 px border of color #ccc */
+  border-radius: 3px; /* rounds out border corners */
+  box-sizing: border-box; /* ensures username and password fields don't overlap Login box */
+}
+
+.login-button,
+.google-button {
+    width: 200px; /* sets width of login and google button */
+    padding: 10px; /* sets padding to 10px */
+    border: none; /* no border */
+    border-radius: 3px; /* rounds out corners */
+    cursor: pointer; /* makes mouse icon turn to hand for interactivity */
+}
+
+.login-button {
+    margin-bottom: 5px; /* Add margin between buttons */
+    background-color: rgb(222,112,112); /* Button background color */
+    color: #fff; /* Button text color */
+    font-weight: bold; /* bolds text */
+}
+
+.google-button {
+    padding: 10px; /* padding of 10px */
+    margin-top: 5px; /* Add margin between buttons */
+    background-color: white; /* white background */
+    border: 2px solid #000; /* solid, 2 pixel border of color black to google button */
+    color: black; /* color of text */
+    font-weight: bold; /* bolds text */
+}
+
+/* Button hover effect */
+.login-button:hover {
+    opacity: 0.8; /* Reduce opacity on hover */
+}
+
+.google-button:hover {
+  background-color: lightgray; /* changes color of button background for accessibility */
+}
+
+.forgot-password-signup {
+  display: flex; /* makes flex container */
+  justify-content: space-between;  /* Evenly spaces forgot password? and signup buttons */
+  margin-bottom: 10px; /* adds 10px margin to bottom */
+}
+
+.forgot-password,
+.signup {
+  color: rgb(222,112,112); /* sets color of forgot password? and signup */
+  text-decoration: none; /* no underline */
+}
+
+.forgot-password:hover,
+.signup:hover {
+  text-decoration: underline; /* underline when hovering over forgot password? and signup */
+}
+
+.signup {
+  font-weight: bold; /* bolds text */
+}

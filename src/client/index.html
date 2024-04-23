@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prix: Home Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <script src="https://kit.fontawesome.com/85c080bd45.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav>
+        <a class="nav-left" id = "home">Prix</a>
+        <div class="nav-right">
+            <a class="nav-link" id = "profile">About</a>
+            <a class="nav-link" id = "about">Login</a>
+        </div>
+    </nav>
+    <div id = "prixTitle">Prix: The Price Comparison Engine</div>
+
+    <!--- <div class = "navBarGrid">
+        <img src="images\testImg.jpg" id="home" alt="Prix">
+        <a class = "navBar Item" id="home">home</a>
+        <a id="profile">About</a>
+        <a id="about">Log In</a> 
+    </div>
+    -->
+
+     
+
+    <div id="views">      
+        <div id="homeView" class="view">
+            <div class="container">
+                <div id="homeSearchDiv">
+                    <input type="text" id="homeSearchBar" placeholder="Begin Searching Now">
+                </div>
+            
+                <div class="section-header">
+                    <h2>What is Prix?</h2>
+                </div>
+            
+                <p id="prix-description">
+                    Prix is a very helpful web application that allows online shoppers to do all their browsing all in one site.
+                    Gone are the days of looking up the price of certain products one site at a time and manually comparing which
+                    one is cheapest, or has the best deals. With Prix, shoppers will be able to not only search for any product on
+                    the internet, but will also be given price comparisons, additional information on the product including shipping
+                    and/or possible deals, and the ability to filter out and sort products with given criteria. When the shopper finds
+                    a product they like, a link will be available to direct them to the external site for purchase. Find whatever your
+                    heart desires, all in one tab, with Prix.
+                </p>
+            </div>
+            <div class="carousel-container">
+                <div class="carousel-slide">
+                    <img src="images/testImg.jpg" alt="Image 1">
+                    <img src="images/testImg2.jpg" alt="Image 2">
+                    <img src="images/testImg.jpg" alt="Image 3">
+                </div>
+                <div class="arrow-container">
+                    <button class="arrow prevArrow">&#10094;</button>
+                    <button class="arrow nextArrow">&#10095;</button>
+                </div>
+            </div>
+            
+            
+            
+        </div>
+        <div id="profileView" class="view" style="display:none">
+            <h1>About This App</h1>
+            <p>This app demonstrates a simple way to navigate between different views using vanilla JavaScript, HTML, and CSS. It's designed as an educational tool to help understand the basics of web development.</p>
+            <p>Here's a placeholder for an app logo or image:</p>
+            <div class="image-container" style="text-align:center; margin:20px;">
+                <img src="https://via.placeholder.com/150" alt="App Logo" style="border-radius:8px;">
+                <img src="https://via.placeholder.com/175" alt="App Logo" style="border-radius:8px;">
+                <img src="https://via.placeholder.com/185" alt="App Logo" style="border-radius:8px;">
+                <img src="https://via.placeholder.com/195" alt="App Logo" style="border-radius:8px;">
+                <img src="https://via.placeholder.com/205" alt="App Logo" style="border-radius:8px;">
+                <img src="https://via.placeholder.com/215" alt="App Logo" style="border-radius:8px;">
+            </div>
+        </div>
+        <div id="aboutView" class="view" style="display:none">
+            <div id="login-view">
+                <h2 id="login-header">
+                    Login
+                </h2>
+                <form>
+                <div class="form-group">
+                <label for="username"></label>
+                <input id="username" type="text" placeholder="Username">
+                </div>
+                <div class="form-group">
+                <label for="password"></label>
+                <input id="password" type="password" placeholder="Password">
+                </div>
+                <div class="forgot-password-signup">
+                <a href="#" class="forgot-password">Forgot password?</a>
+                <a href="#" class="signup">Sign Up</a>
+                </div>
+                <button type="submit" class="login-button">Login</button>
+                <button class="google-button" onclick="loginWithGoogle()">
+                <i class="fa-brands fa-google"></i>
+                <span>Login with Google</span>
+            </button>
+            </form>
+            </div>
+        </div>
+    </div>    
+</body>
+</html>
