@@ -65,7 +65,8 @@ nav {
   margin-bottom: 5px; /* sets bottom margin to 5px */
 }
 
-.form-group input[type="text"] {
+.form-group input[type="text"],
+.form-group input[type="password"] {
   width: 100%; /* sets width of input */
   padding: 10px; /* sets padding to 10px */
   border: 1px solid #ccc; /* adds solid, 1 px border of color #ccc */
