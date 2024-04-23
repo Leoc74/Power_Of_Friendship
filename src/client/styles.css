@@ -66,17 +66,25 @@ header {
 
 #homeSearchDiv{
     /*upper padding */
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
     padding: 10px 0;
     display: flex;
     justify-content: center;
+    width: 100%;
+    z-index: 3;
 }
 #homeSearchBar {
-    width: 500px; /* Set the width of the text field */
-    height: 60px; /* Set the height of the text field */
-    padding: 12px; /* Add padding for better visual appearance */
-    border: 1px solid #ccc; /* Add a border to the text field */
+    width: 150px; /* Set the width of the text field */
+    height: 2px; /* Set the height of the text field */
+    padding: 18px; /* Add padding for better visual appearance */
+    border: none;
+    border-bottom: 2px solid rgb(201, 201, 201); /* Add a border to the text field */
     border-radius: 5px; /* Add rounded corners to the border */
-    font-size: 30px; /* Set the font size of the text */
+    font-size: 15px; /* Set the font size of the text */
+    background-color:transparent;
   }
 /* Navigation styles */
 nav {
@@ -94,7 +102,7 @@ nav {
   }
   
   .nav-left {
-    color: #fff;
+    color:#C0C5C1;
     text-decoration: none;
     font-size: 20px;
  
@@ -105,7 +113,7 @@ nav {
   }
   
   .nav-link {
-    color: #fff;
+    color: #C0C5C1;
     text-decoration: none;
     transition: color 0.3s ease;
     font-size: 20px;
@@ -123,6 +131,11 @@ nav {
     right:35px;
     top: 0px;
   }
+  #shop{
+    position: relative;
+    right:110px;
+    top: 0px;
+  }
   
   .nav-link:hover {
     color: #ddd; /* Light gray hover color */
@@ -131,7 +144,7 @@ nav {
 /* Styling for Prix main title*/
 #prixTitle{
     position: relative;
-    color: rgb(255, 255, 255);
+    color: #C0C5C1;
     text-align: center;
     font-size:50px;
     font-weight: bold;
