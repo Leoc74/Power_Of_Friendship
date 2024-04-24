@@ -66,3 +66,5 @@ function populateSearches(num_results) {
     results_container.appendChild(result);
   }
 }
+
+
