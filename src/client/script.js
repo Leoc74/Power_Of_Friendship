@@ -19,6 +19,9 @@ document.addEventListener("DOMContentLoaded", () => {
   document
     .getElementById("about")
     .addEventListener("click", () => navigate("aboutView"));
+  document
+    .getElementById("shop")
+    .addEventListener("click", () => navigate("search-view"));
 
   // Initialize with the home view
   navigate("homeView");
