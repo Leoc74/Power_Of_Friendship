@@ -22,10 +22,19 @@ REQUIREMENTS
 html {
     scroll-behavior: smooth;
 }
+/*Fonts*/
+@font-face {
+    font-family: 'vougue';
+    src: url('fonts/Vogue.ttf') format('truetype')
+}
+@font-face {
+    font-family: 'bebas';
+    src:url('fonts/BebasNeue-Regular.ttf') format('truetype');
+}
 
 /* Global styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: arial, sans-serif;
     margin: 0;
     padding: 0;
 }
@@ -43,6 +52,8 @@ header {
     width: 100px;
     float: left;
     z-index: 3;
+    font-family: bebas;
+    font-size: 23px;
 }
 .navBarGrid {
     display: grid;
@@ -127,18 +138,21 @@ nav {
     right:70px ;
     top: 0 px;
     z-index: 3;
+    font-family: bebas;
   }
   #about{
     position: relative;
     right:35px;
     top: 0px;
     z-index: 3;
+    font-family: bebas;
   }
   #shop{
     position: relative;
     right:110px;
     top: 0px;
     z-index: 3;
+    font-family: bebas;
   }
   
   .nav-link:hover {
@@ -149,6 +163,9 @@ nav {
     position: relative;
     display: inline-block;
     z-index: 3;
+    font-family: bebas;
+    letter-spacing: 2px;
+    font-size: 15px;
     
 
 }
@@ -179,9 +196,9 @@ nav {
 #prixTitle{
     position: relative;
     color: #C0C5C1;
+    font-family: vougue;
     text-align: center;
-    font-size:40px;
-    font-weight: bold;
+    font-size:45px;
     top:200px;
     z-index: 1;
     
@@ -231,7 +248,8 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-   
+    font-family: vougue;
+   letter-spacing: 5px;
     font-size: 40px;
 }
 
@@ -274,6 +292,8 @@ h2 {
     height: 500px; 
     background-color: #1f1f1f; 
     text-align: center;
+    font-family: bebas;
+    letter-spacing: 5px;
 }
 
 

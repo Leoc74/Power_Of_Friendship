@@ -1,10 +1,21 @@
 
+/* fonts*/
+@font-face {
+  font-family: 'vougue';
+  src: url('fonts/Vogue.ttf') format('truetype')
+}
+@font-face {
+  font-family: 'bebas';
+  src:url('fonts/BebasNeue-Regular.ttf') format('truetype');
+}
 
 #home{
   padding-left: 10px;
   width: 100px;
   float: left;
   z-index: 3;
+  font-family: bebas;
+  letter-spacing: 5px;
 }
 .navBarGrid {
   display: grid;
@@ -90,18 +101,21 @@ nav {
   right:70px ;
   top: 0 px;
   z-index: 3;
+  font-family: bebas;
 }
 #about{
   position: relative;
   right:35px;
   top: 0px;
   z-index: 3;
+  font-family: bebas;
 }
 #shop{
   position: relative;
   right:110px;
   top: 0px;
   z-index: 3;
+  font-family: bebas;
 }
 
 .nav-link:hover {
@@ -144,6 +158,7 @@ nav {
   text-align: center; /*centers*/
   color: rgb(174, 201, 178);; /*font color*/
   font-size: 30px; /*font size*/
+  font-family: vougue;
 }
 
 /*styling the login box */
