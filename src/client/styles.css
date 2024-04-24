@@ -158,8 +158,6 @@ nav {
     font-family: bebas;
     letter-spacing: 2px;
     font-size: 15px;
-    
-
 }
 
 .nav-dropDown-content {
@@ -169,8 +167,6 @@ nav {
     min-width: 100%; /* Set the width to match the parent */
     right:90px;
     top:42px
-    
-  
 }
 
 .nav-dropDown-content a {
