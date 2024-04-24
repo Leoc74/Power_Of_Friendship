@@ -142,7 +142,7 @@ nav {
 /*styling "Login" above the form*/
 #login-header {
   text-align: center; /*centers*/
-  color: rgb(222, 112, 112); /*font color*/
+  color: rgb(174, 201, 178);; /*font color*/
   font-size: 30px; /*font size*/
 }
 
@@ -195,7 +195,7 @@ nav {
 
 .login-button {
     margin-bottom: 5px; /* Add margin between buttons */
-    background-color: rgb(222,112,112); /* Button background color */
+    background-color: rgb(174, 201, 178); /* Button background color */
     color: #fff; /* Button text color */
     font-weight: bold; /* bolds text */
 }
@@ -226,7 +226,7 @@ nav {
 
 .forgot-password,
 .signup {
-  color: rgb(222,112,112); /* sets color of forgot password? and signup */
+  color: rgb(174, 201, 178); /* sets color of forgot password? and signup */
   text-decoration: none; /* no underline */
 }
 
