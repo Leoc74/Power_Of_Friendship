@@ -82,7 +82,7 @@ nav {
     color: #ddd; /* Light gray hover color */
   }
 
-  .nav-bar-dropdown {
+  .nav-dropDown {
     position: relative;
     display: inline-block;
     z-index: 3;
@@ -93,7 +93,7 @@ nav {
 
 }
 
-.nav-bar-dropdown-content {
+.nav-dropdown-content {
     display: none;
     position: absolute;
     background-color: rgba(0, 0, 0, 0.568);
@@ -104,7 +104,7 @@ nav {
   
 }
 
-.nav-bar-dropdown-content a {
+.nav-dropdown-content a {
     color: white;
     padding: 12px 16px;
     text-decoration: none;
@@ -112,7 +112,7 @@ nav {
     
 }
 
-.nav-bar-dropdown:hover .nav-bar-dropdown-content {
+.dropdown2:hover .dropdown-content2 {
     display: block;
 }
 #search-view{
