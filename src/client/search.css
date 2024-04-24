@@ -93,7 +93,7 @@ nav {
 
 }
 
-.nav-dropdown-content {
+.nav-dropDown-content {
     display: none;
     position: absolute;
     background-color: rgba(0, 0, 0, 0.568);
@@ -104,7 +104,7 @@ nav {
   
 }
 
-.nav-dropdown-content a {
+.nav-dropDown-content a {
     color: white;
     padding: 12px 16px;
     text-decoration: none;
@@ -112,7 +112,7 @@ nav {
     
 }
 
-.dropdown2:hover .dropdown-content2 {
+.nav-dropDown:hover .nav-dropDown-content {
     display: block;
 }
 #search-view{
