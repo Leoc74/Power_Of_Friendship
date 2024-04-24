@@ -170,7 +170,7 @@ nav {
 
 .clothes {
     flex: 1 0 calc(25% - 20px);
-    position: relative; /* Ensure relative positioning for absolute children */
+    position: relative; 
     overflow: hidden;
     margin-bottom: 20px;
 }
@@ -218,34 +218,83 @@ h2 {
 
 /*Home page styling*/
 
-.container {
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
+
 
 #homeSearchDiv {
     margin-bottom: 20px;
 }
 
-.section-header {
+.container {
+    display: flex;
+    width: 100%;
+}
+
+.box1,
+.box2 {
+    flex: 1; 
+    height: 500px;
+}
+
+.box1 {
+    position: relative;
+    width: 50%; 
+    height: 500px; 
+    background-color: #242424; 
     text-align: center;
-    margin-bottom: 20px;
+}
+
+
+
+.section-header {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding: 20px;
 }
 
 .section-header h2 {
-    color: rgb(222, 112, 112);
-    font-size: 32px;
+
+    margin:auto;
+    color: #ffffff;
 }
 
 #prix-description {
-    font-size: 18px;
+    color: white; /* Text color */
+    font-size: 16px;
     line-height: 1.6;
+    text-align: center; /* Center the text horizontally */
+    opacity: 0; /* Initially hide the text */
+    transition: opacity 0.3s; /* Add a smooth transition effect */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Ensure the text covers the entire width of the box */
+    height: 100%; /* Ensure the text covers the entire height of the box */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background color */
+    padding: 20px; /* Add padding to the text */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
 }
-
-/*Stlying for the Carousel*/
+.box2 {
+    position: relative; /* Ensure absolute positioning of child elements is relative to this container */
+    background-image: url('images/what-is-prix.jpg');
+    background-size: cover; 
+    background-position: center; 
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    height: 500px; /* Set the height of the box */
+    width: 50%; /* Set the width of the box */
+    
+}
+.box2:hover #prix-description {
+    opacity: 1; /* Show the text on hover */
+}
+/*Stlying for the Carousel (removed this for the time being -Ami*/
 .carousel-container {
     position: relative;
     max-width: 600px; /* 1.5 times the original width */
