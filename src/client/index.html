@@ -6,8 +6,10 @@
     <title>Prix: Home Page</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="search.css">
+    <link rel = "stylesheet" href = "about.css">
     <script src="script.js" defer></script>
     <script src="https://kit.fontawesome.com/85c080bd45.js" crossorigin="anonymous"></script>
+    <script src = "about.js" defer></script>
 </head>
 <body>
     <nav>
@@ -93,17 +95,71 @@
             
         </div>
         <div id="profileView" class="view" style="display:none">
-            <h1>About This App</h1>
-            <p>This app demonstrates a simple way to navigate between different views using vanilla JavaScript, HTML, and CSS. It's designed as an educational tool to help understand the basics of web development.</p>
-            <p>Here's a placeholder for an app logo or image:</p>
-            <div class="image-container" style="text-align:center; margin:20px;">
-                <img src="https://via.placeholder.com/150" alt="App Logo" style="border-radius:8px;">
-                <img src="https://via.placeholder.com/175" alt="App Logo" style="border-radius:8px;">
-                <img src="https://via.placeholder.com/185" alt="App Logo" style="border-radius:8px;">
-                <img src="https://via.placeholder.com/195" alt="App Logo" style="border-radius:8px;">
-                <img src="https://via.placeholder.com/205" alt="App Logo" style="border-radius:8px;">
-                <img src="https://via.placeholder.com/215" alt="App Logo" style="border-radius:8px;">
-            </div>
+            <section id="overview" class="section-header-about">
+                <h2>ABOUT PRIX</h2>
+                Prix is a very helpful web application that allows online shoppers to do all their browsing all in one site.
+                Gone are the days of looking up the price of certain products one site at a time and manually comparing which
+                one is cheapest, or has the best deals. With Prix, shoppers will be able to not only search for any product on
+                the internet, but will also be given price comparisons, additional information on the product including shipping
+                and/or possible deals, and the ability to filter out and sort products with given criteria. When the shopper finds
+                a product they like, a link will be availableto direct them to the external site for purchase. Find whatever your
+                heart desires, all in one tab, with Prix.
+    
+            </section>
+            <section id="team" class="section-header-about">
+                <div id = "meetTheTeam">Meet The Team!</div>
+                <div id="grid-container-about">
+                <!--Added section or else div element would go to the bottom of title section-->
+                    <section class="grid-elem"><h3>
+                        Leo Ciccarelli
+                    </h3>
+                    <img src="images\leoc.jpg" width="100" alt="Leo C">
+                    <br>
+                    <button id="lcinfo-button" type="submit">Expand</button>
+                    <div id="lcinfo" class="info"></div>
+                </section>
+    
+                <section class="grid-elem"><h3>
+                        Kevin Shang
+                    </h3>
+                    <img src="images\KevinShangHeadshot.jpeg" width="100" alt="Kevin S">
+                    <br>
+                    <button id="ksinfo-button" type="submit">Expand</button>
+                    <div id="ksinfo" class="info"></div>
+                    </section>
+    
+                    <section class="grid-elem"><h3>
+                        Amira Garba
+                    </h3>
+                    <img src="images/ami.jpg" height="100" alt="Amira G">
+                    <br>
+                    <button id="aginfo-button" type="submit">Expand</button>
+                    <div id="aginfo" class="info"></div>
+                </section>
+    
+                    <section class="grid-elem"><h3>
+                        Evan Ciccarelli
+                    </h3>
+                    <img src="images\EvanPicture.jpg" width="100" alt="Evan C">
+                    <br>
+                    <button id="ecinfo-button" type="submit">Expand</button>
+                    <div id="ecinfo" class="info"></div>
+                </section>
+                </div>
+            </section>
+            <!---
+            <section id="overview" class="section-header">
+                <h2>Overview</h2>
+                Prix is a very helpful web application that allows online shoppers to do all their browsing all in one site.
+                Gone are the days of looking up the price of certain products one site at a time and manually comparing which
+                one is cheapest, or has the best deals. With Prix, shoppers will be able to not only search for any product on
+                the internet, but will also be given price comparisons, additional information on the product including shipping
+                and/or possible deals, and the ability to filter out and sort products with given criteria. When the shopper finds
+                a product they like, a link will be availableto direct them to the external site for purchase. Find whatever your
+                heart desires, all in one tab, with Prix.
+    
+            </section>
+            -->
         </div>
         <div id="aboutView" class="view" style="display:none">
             <div id="login-view">
