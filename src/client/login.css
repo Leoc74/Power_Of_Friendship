@@ -156,7 +156,7 @@ nav {
 /*styling "Login" above the form*/
 #login-header {
   text-align: center; /*centers*/
-  color: rgb(174, 201, 178);; /*font color*/
+  color: rgb(174, 201, 178); /*font color*/
   font-size: 30px; /*font size*/
   font-family: vougue;
 }
