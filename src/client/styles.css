@@ -42,6 +42,7 @@ header {
     padding-left: 10px;
     width: 100px;
     float: left;
+    z-index: 3;
 }
 .navBarGrid {
     display: grid;
@@ -88,7 +89,7 @@ header {
   }
 /* Navigation styles */
 nav {
-    position: absolute;
+    position: fixed;
     background-color:rgba(0, 0, 0, 0.568);
     color:white ;
     padding: 20px;
@@ -125,16 +126,19 @@ nav {
     position: relative;
     right:70px ;
     top: 0 px;
+    z-index: 3;
   }
   #about{
     position: relative;
     right:35px;
     top: 0px;
+    z-index: 3;
   }
   #shop{
     position: relative;
     right:110px;
     top: 0px;
+    z-index: 3;
   }
   
   .nav-link:hover {
@@ -266,7 +270,7 @@ h2 {
     position: relative;
     width: 50%; 
     height: 500px; 
-    background-color: #242424; 
+    background-color: #1f1f1f; 
     text-align: center;
 }
 
