@@ -55,17 +55,7 @@ header {
     font-family: bebas;
     font-size: 23px;
 }
-.navBarGrid {
-    display: grid;
-    background-color: #f4f4f4;
-    padding: 10px 0;
-    text-align: center;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: auto;
-    grid-gap: 10px; /* Gap between grid items */
-    align-items: center; /* Vertically center items */
-    font-size: 20px
-}
+
 .navBarGrid a {
     text-decoration:none;
     color: #333;
@@ -158,8 +148,9 @@ nav {
   .nav-link:hover {
     color: #ddd; /* Light gray hover color */
   }
+  
  /* Styling dropdown*/
- .dropdown {
+ .nav-dropDown {
     position: relative;
     display: inline-block;
     z-index: 3;
@@ -170,7 +161,7 @@ nav {
 
 }
 
-.dropdown-content {
+.nav-dropDown-content {
     display: none;
     position: absolute;
     background-color: rgba(0, 0, 0, 0.568);
@@ -181,7 +172,7 @@ nav {
   
 }
 
-.dropdown-content a {
+.nav-dropDown-content a {
     color: white;
     padding: 12px 16px;
     text-decoration: none;
@@ -189,7 +180,7 @@ nav {
     
 }
 
-.dropdown:hover .dropdown-content {
+.nav-dropDown:hover .nav-dropDown-content {
     display: block;
 }
 /* Styling for Prix main title*/
