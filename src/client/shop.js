@@ -1,11 +1,12 @@
+
 document.addEventListener('DOMContentLoaded', function() {
     var filterForm = document.getElementById('filter-form');
     var searchList = document.getElementById('search-list');
     var clearBtn = document.getElementById('clear-btn');
 
-    function addToList(text) {
+    function addToList(item) {
         var li = document.createElement('li');
-        li.textContent = text;
+        li.textContent = item;
         searchList.appendChild(li);
     }
 
@@ -13,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
         event.preventDefault(); 
         var filters = {};
 
-
+     
         var checkboxes = filterForm.querySelectorAll('input[type="checkbox"]:checked');
         checkboxes.forEach(function(checkbox) {
             var name = checkbox.name;
@@ -24,14 +25,15 @@ document.addEventListener('DOMContentLoaded', function() {
             filters[name].push(value);
         });
 
-        searchList.innerHTML = '';
-        for (var key in filters) {
-            if (filters.hasOwnProperty(key)) {
-                filters[key].forEach(function(value) {
-                    addToList(key + ': ' + value);
-                });
+        searchList.innerHTML = ''; // Clear previous list items
+        var items = ['Pants', 'Shirt', 'Dress', 'Jacket']; // Example 
+        items.forEach(function(item) {
+            var displayItem = item;
+            if (Object.keys(filters).length > 0) {
+                displayItem += ' [' + Object.entries(filters).map(([key, value]) => key + ': ' + value.join(', ')).join(', ') + ']';
             }
-        }
+            addToList(displayItem);
+        });
     });
 
     clearBtn.addEventListener('click', function() {
