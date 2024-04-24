@@ -146,7 +146,7 @@ nav {
     position: relative;
     color: #C0C5C1;
     text-align: center;
-    font-size:50px;
+    font-size:40px;
     font-weight: bold;
     top:200px;
     z-index: 1;
@@ -160,6 +160,48 @@ nav {
     position:relative;
     z-index: 0;
     top: 0px;
+}
+/*clothes section styling */
+.clothes-select {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.clothes {
+    flex: 1 0 calc(25% - 20px);
+    position: relative; /* Ensure relative positioning for absolute children */
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.clothes img {
+    width: 100%;
+    height: 700px;
+    object-fit: cover;
+}
+
+.overlay-txt {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust the opacity for darkness */
+    color: white;
+    padding: 10px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    font-size: 40px;
+}
+
+.clothes:hover .overlay-txt {
+    opacity: 1;
 }
 /* Main content styles */
 main {
