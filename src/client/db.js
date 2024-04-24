@@ -7,8 +7,8 @@ const db = new PouchDB("search-data");
 export async function printData() {
   let data = await getDocument("20");
   //console.log(data);
-  //let results = await db.allDocs({ include_docs: true, attachments: true });
-  //console.log(results.rows);
+  let results = await db.allDocs({ include_docs: true, attachments: true });
+  console.log(results.rows);
 }
 
 async function getDocument(id) {
@@ -20,14 +20,14 @@ async function getDocument(id) {
   }
 }
 
-async function checkDocExist(id){
-  try{
+async function checkDocExist(id) {
+  try {
     await db.get(id);
     return true;
-  }catch(error){
-    if(error.name === "not_found"){
+  } catch (error) {
+    if (error.name === "not_found") {
       return false;
-    }else{
+    } else {
       throw error;
     }
   }
@@ -35,7 +35,7 @@ async function checkDocExist(id){
 
 /**
  * Asynchronously saves a new product object to the database with the specified parameters
- * 
+ *
  *
  * @async
  * @param {string} id - The unique identifier for the counter.
@@ -48,15 +48,15 @@ async function checkDocExist(id){
  * database connectivity issues.
  */
 export async function saveProduct(id, title, content, imagePath, link) {
-  if(!checkDocExist(id)){
-    await db.put({ 
-      _id: id, 
+  if (!(await checkDocExist(id))) {
+    await db.put({
+      _id: id,
       title: title,
       content: content,
       imagePath: imagePath,
-      link: link
+      link: link,
     });
-  }else{
+  } else {
     console.log("id already exists!");
   }
 }
