@@ -22,6 +22,32 @@ document.addEventListener("DOMContentLoaded", () => {
   document
     .getElementById("shop")
     .addEventListener("click", () => navigate("search-view"));
+  document
+    .getElementById("kid")
+    .addEventListener("click", () => navigate("search-view"));
+  document
+    .getElementById("men")
+    .addEventListener("click", () => navigate("search-view"));
+  document
+    .getElementById("women")
+    .addEventListener("click", () => navigate("search-view"));
+  document
+    .getElementById("plus")
+    .addEventListener("click", () => navigate("search-view"));
+  document
+    .getElementById("woman")
+    .addEventListener("click", () => navigate("search-view"));
+  document
+    .getElementById("man")
+    .addEventListener("click", () => navigate("search-view"));
+  document
+    .getElementById("kids")
+    .addEventListener("click", () => navigate("search-view"));
+  document
+    .getElementById("pluses")
+    .addEventListener("click", () => navigate("search-view"));
+  
+  
 
   // Initialize with the home view
   navigate("homeView");

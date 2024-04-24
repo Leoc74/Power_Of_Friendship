@@ -2,8 +2,6 @@
 
 const db = new PouchDB("search-data");
 
-//db.put({ _id: "2", title: "Header (1)" });
-
 export async function printData() {
   let data = await getDocument("20");
   //console.log(data);
@@ -61,6 +59,11 @@ export async function saveProduct(id, title, content, imagePath, link) {
   }
 }
 
+export async function getAllProducts() {
+  let results = db.allDocs({ include_docs: true, attachments: true });
+  return results;
+}
+
 /**
  * Asynchronously modifies an existing counter in the database. The counter
  * document must include an `_id` property that matches the counter's name in
@@ -104,6 +107,7 @@ export async function loadCounter(name) {
  */
 export async function removeCounter(name) {
   db.remove(name);
+  db.destroy();
 }
 
 /**

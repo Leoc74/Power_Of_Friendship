@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="search.css">
     <link rel = "stylesheet" href = "about.css">
     <script src="script.js" defer></script>
+    <script type="module" src="search.js" defer></script>
+    <!-- To import PouchDB below -->
+    <script src="//cdn.jsdelivr.net/npm/pouchdb@8.0.1/dist/pouchdb.min.js"></script>
     <script src="https://kit.fontawesome.com/85c080bd45.js" crossorigin="anonymous"></script>
     <script src = "about.js" defer></script>
 </head>
@@ -19,10 +22,10 @@
                 <a class="nav-link" id="shop">Shop</a>
                 
                 <div class="nav-dropDown-content">
-                    <a href="#">women</a>
-                    <a href="#">men</a>
-                    <a href="#">kid</a>
-                    <a href="#">plus</a>
+                    <a id="women">women</a>
+                    <a id="men">men</a>
+                    <a id="kid">kid</a>
+                    <a id="plus">plus</a>
                 </div>
             </div>
             <a class="nav-link" id = "profile">About</a>
@@ -75,21 +78,21 @@
  
             
             <div class="clothes-select">
-                <div class="clothes" id="woman">
+                <div class="clothes" id="women">
                     <img src="images/women-clothes.jpg">
-                    <a href="search.html"><div class="overlay-txt"><p>Woman</p></div></a>
+                    <a class="overlay-txt" id="woman">Woman</a>
                 </div>
-                <div class="clothes" id="man">
+                <div class="clothes" id="men">
                     <img src="images/men-clothes.jpg">
-                    <a href="search.html"></a><div class="overlay-txt"><p>Man</p></div></a>
+                    <a class="overlay-txt" id="man">Man</a>
                 </div>
                 <div class="clothes" id="kid">
                     <img src="images/kid-clothes.jpg">
-                    <a href="search.html"> <div class="overlay-txt"><p>Kid</p></div></a>
+                    <a class="overlay-txt" id="kids">Kid</a>
                 </div>
                 <div class="clothes" id="plus">
                     <img src="images/plus-clothes.jpg">
-                    <a href="search.html">  <div class="overlay-txt"><p>Plus</p></div></a>
+                    <a class="overlay-txt" id="pluses">Plus</a>
                 </div>
             </div>
             
@@ -213,19 +216,7 @@
               
           </div>
           <div id="results-container">
-              <div class="result">
-                  <a href="">
-                      <h3>Title (link to post)</h3>
-                  </a>
-                  <p>Description of Listing</p>
-                  <img src="images/testImg.jpg" alt="Img attached to result (if available)">
-              </div>
-              <div class="result">Result 2</div>
-              <div class="result">Result 2</div>
-              <div class="result">Result 2</div>
-              <div class="result">Result 2</div>
-              <div class="result">Result 2</div>
-              <div class="result">Result 2</div>
+              
           </div>
       </div>
     </div>    
