@@ -148,6 +148,9 @@ nav {
  .dropdown {
     position: relative;
     display: inline-block;
+    z-index: 3;
+    
+
 }
 
 .dropdown-content {
@@ -155,8 +158,8 @@ nav {
     position: absolute;
     background-color: rgba(0, 0, 0, 0.568);
     min-width: 100%; /* Set the width to match the parent */
-    z-index: 1;
-    top: 100%; /* Position the dropdown below the parent */
+    right:90px;
+    top:42px
     
   
 }
@@ -171,7 +174,6 @@ nav {
 
 .dropdown:hover .dropdown-content {
     display: block;
-    margin-right: 500px;
 }
 /* Styling for Prix main title*/
 #prixTitle{
