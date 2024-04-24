@@ -21,22 +21,20 @@
 
     <section id="filters">
         <h2>Filters</h2>
-        <form>
-            <label for="size">Size:</label>
-            <select id="size" name="size">
-                <option value="small">Small</option>
-                <option value="medium">Medium</option>
-                <option value="large">Large</option>
-            </select>
-            <br>
-            <label for="color">Color:</label>
-            <select id="color" name="color">
-                <option value="red">Red</option>
-                <option value="blue">Blue</option>
-                <option value="green">Green</option>
-                <option value="yellow">Yellow</option>
-            </select>
-            <br>
+        <form id="filter-form">
+            <fieldset>
+                <legend>Size:</legend>
+                <label><input type="checkbox" name="size" value="small"> Small</label><br>
+                <label><input type="checkbox" name="size" value="medium"> Medium</label><br>
+                <label><input type="checkbox" name="size" value="large"> Large</label><br>
+            </fieldset>
+            <fieldset>
+                <legend>Color:</legend>
+                <label><input type="checkbox" name="color" value="red"> Red</label><br>
+                <label><input type="checkbox" name="color" value="blue"> Blue</label><br>
+                <label><input type="checkbox" name="color" value="green"> Green</label><br>
+                <label><input type="checkbox" name="color" value="yellow"> Yellow</label><br>
+            </fieldset>
             <input type="submit" value="Apply Filters">
         </form>
     </section>
@@ -44,7 +42,7 @@
     <section id="search">
         <h2>Search</h2>
         <input type="text" id="search-input" placeholder="Enter names...">
-        <button onclick="clearList()" id="clear-btn">Clear List</button>
+        <button id="clear-btn">Clear List</button>
         <ul id="search-list"></ul>
     </section>
 

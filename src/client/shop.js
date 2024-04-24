@@ -1,20 +1,40 @@
-function clearList() {
-    document.getElementById('search-list').innerHTML = '';
-}
-
-document.getElementById('search-input').addEventListener('input', function() {
-    var inputText = this.value.toLowerCase();
+document.addEventListener('DOMContentLoaded', function() {
+    var filterForm = document.getElementById('filter-form');
     var searchList = document.getElementById('search-list');
-    searchList.innerHTML = ''; // Clear previous list items
+    var clearBtn = document.getElementById('clear-btn');
 
-    // Example list of names
-    var names = ['John', 'Doe', 'Jane', 'Smith'];
+    function addToList(text) {
+        var li = document.createElement('li');
+        li.textContent = text;
+        searchList.appendChild(li);
+    }
 
-    names.forEach(function(name) {
-        if (name.toLowerCase().includes(inputText)) {
-            var li = document.createElement('li');
-            li.textContent = name;
-            searchList.appendChild(li);
+    filterForm.addEventListener('submit', function(event) {
+        event.preventDefault(); 
+        var filters = {};
+
+
+        var checkboxes = filterForm.querySelectorAll('input[type="checkbox"]:checked');
+        checkboxes.forEach(function(checkbox) {
+            var name = checkbox.name;
+            var value = checkbox.value;
+            if (!filters[name]) {
+                filters[name] = [];
+            }
+            filters[name].push(value);
+        });
+
+        searchList.innerHTML = '';
+        for (var key in filters) {
+            if (filters.hasOwnProperty(key)) {
+                filters[key].forEach(function(value) {
+                    addToList(key + ': ' + value);
+                });
+            }
         }
+    });
+
+    clearBtn.addEventListener('click', function() {
+        searchList.innerHTML = '';
     });
 });
