@@ -5,27 +5,6 @@
     --gray: #cacaca;
     --salmon: #e98074;
     --gunmetal: #296b83;
-    
-    /*--pink: #e7717d;
-    --gray: #c2cad0;
-    --beige: #c2b9b0;
-    --brown: #7e685a;
-    --green: #afd275;
-    */
-    /*--black: #5f6366;
-    --dark-blue: #4d6d9a;
-    --medium-blue: #86b3d1;
-    --light-blue: #99ced3;
-    --pink: #edb5bf;
-    */
-    /*--gray: #6d676e;
-    --salmon: #ffa5ab;
-    --beige: #ebebd3;
-    --light-beige: #f6f6eb;
-    --blue: #60b2e5;
-    --black: #020300;
-    --periwinkle: #ADBDFF;
-    */
 }
   body{
     background-color: var(--gray);
@@ -40,26 +19,6 @@
     z-index: 3;
     font-family: bebas;
     font-size: 23px;
-}
-.navBarGrid {
-    display: grid;
-    background-color: #f4f4f4;
-    padding: 10px 0;
-    text-align: center;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: auto;
-    grid-gap: 10px; /* Gap between grid items */
-    align-items: center; /* Vertically center items */
-    font-size: 20px
-}
-.navBarGrid a {
-    text-decoration:none;
-    color: #333;
-    padding: 10px 20px;
-}
-
-.navBarGrid a:hover {
-    background-color: #ddd;
 }
 
 nav {
@@ -168,7 +127,7 @@ label.custom-label {
   #search-container {
     margin: 20px 8px; /* Add space between navbar and search container */
     /*background-color: #f2f2f2; /* Match the background color to the rest of the page */
-    background-color:rgba(0, 0, 0, 0);
+    background-color:rgba(0, 0, 0, 0.4);
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
@@ -210,7 +169,7 @@ label.custom-label {
 }
 
 #search-container input[type="button"]:hover {
-    background-color: rgba(181, 90, 90, 0);
+    background-color: rgb(174, 201, 178, 0.6);
 }
 
 
@@ -240,7 +199,7 @@ label.custom-label {
     grid-gap: 2vw;
 
     margin: 20px 8px; /* Add space between navbar and search container */
-    background-color: var(--periwinkle, var(--gray));
+    background-color: rgba(0, 0, 0, 0.4);
     padding-top: 20px;
     padding-right: 40px;
     border-radius: 5px;
@@ -250,7 +209,7 @@ label.custom-label {
 /* Style for each search result */
 .result {
     /*background-color: #f9f9f9;*/
-    background-color: var(--light-beige, var(--white));
+    background-color: var(--white);
     border-radius: 5px;
     padding: 10px;
     margin-inline-start: 10px;

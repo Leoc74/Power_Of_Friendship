@@ -143,6 +143,7 @@ nav {
     top: 0px;
     z-index: 3;
     font-family: bebas;
+    padding: 18px;
   }
   
   .nav-link:hover {
