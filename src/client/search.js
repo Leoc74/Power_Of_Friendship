@@ -56,31 +56,5 @@ search_box.addEventListener("keyup", async function (event) {
       <img src="${imagePath}" alt="Image not Found">`;
       results_container.appendChild(resultElement);
     }
-    /*let message = Number(search_box.value);
-    console.log(message);
-    populateSearches(message);*/
   }
 });
-
-/**
- * NOT IN USE:
- * Populates the results container with searches.
- * Has temporary search data for now. May add params to specify result data
- * @param num_results {number} Specifies how many search results to populate
- */
-function populateSearches(num_results) {
-  if (isNaN(num_results)) {
-    return;
-  }
-  results_container.innerHTML = "";
-  for (let i = 0; i < num_results; ++i) {
-    let result = document.createElement("div");
-    result.classList.add("result");
-    result.innerHTML = `<a href="">
-    <h3>Title (link to post)</h3>
-</a>
-<p>Description of Listing</p>
-<img src="images/testImg.jpg" alt="Img attached to result (if available)">`;
-    results_container.appendChild(result);
-  }
-}
