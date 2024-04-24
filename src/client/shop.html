@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop</title>
+    <style>
+        #search-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        #clear-btn {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Shop</h1>
+    </header>
+
+    <section id="filters">
+        <h2>Filters</h2>
+        <form>
+            <label for="size">Size:</label>
+            <select id="size" name="size">
+                <option value="small">Small</option>
+                <option value="medium">Medium</option>
+                <option value="large">Large</option>
+            </select>
+            <br>
+            <label for="color">Color:</label>
+            <select id="color" name="color">
+                <option value="red">Red</option>
+                <option value="blue">Blue</option>
+                <option value="green">Green</option>
+                <option value="yellow">Yellow</option>
+            </select>
+            <br>
+            <input type="submit" value="Apply Filters">
+        </form>
+    </section>
+
+    <section id="search">
+        <h2>Search</h2>
+        <input type="text" id="search-input" placeholder="Enter names...">
+        <button onclick="clearList()" id="clear-btn">Clear List</button>
+        <ul id="search-list"></ul>
+    </section>
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>
