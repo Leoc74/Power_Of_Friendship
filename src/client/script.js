@@ -21,44 +21,23 @@ document.addEventListener("DOMContentLoaded", () => {
   document
     .getElementById("shop")
     .addEventListener("click", () => navigate("search-view"));
-  document
-    .getElementById("kid")
-    .addEventListener("click", () => navigate("search-view"));
-  document
-    .getElementById("men")
-    .addEventListener("click", () => navigate("search-view"));
-  document
-    .getElementById("women")
-    .addEventListener("click", () => navigate("search-view"));
-  document
-    .getElementById("plus")
-    .addEventListener("click", () => navigate("search-view"));
-  document
-    .getElementById("woman")
-    .addEventListener("click", () => navigate("search-view"));
-  document
-    .getElementById("man")
-    .addEventListener("click", () => navigate("search-view"));
-  document
-    .getElementById("kids")
-    .addEventListener("click", () => navigate("search-view"));
-  document
-    .getElementById("pluses")
-    .addEventListener("click", () => navigate("search-view"));
+
+  let classNames = ["woman", "man", "kid", "plus"];
+  for (let c of classNames) {
+    sendToSearchPage(c);
+  }
 
   // Initialize with the home view
   navigate("homeView");
 
-  //If we press enter in the search bar navigate to the search page (and do a search later)
-  //For now we just go to profileView, will be changed once we have a searchView
-  const homeSearchBar = document.getElementById("homeSearchBar");
-  homeSearchBar.addEventListener("keypress", (event) => {
-    //console.log FOR DEBUGGING
-    //console.log("MADE IT");
-    if (event.key === "Enter") {
-      navigate("profileView");
+  function sendToSearchPage(className) {
+    let classCollection = document.getElementsByClassName(className);
+    for (let c of classCollection) {
+      c.addEventListener("click", () => navigate("search-view"));
     }
-  });
+  }
+
+  //For Image Carousel: Currently not implimented
 
   // Assuming your images are within a container with the class
   // 'image-container'
