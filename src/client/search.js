@@ -9,13 +9,7 @@ let results_container = document.getElementById("results-container");
 
 window.addEventListener("load", async () => {
   await db.printData();
-  await db.saveProduct(
-    "3",
-    "test title",
-    "test content",
-    "images/testImg.jpg",
-    "https://chat.openai.com/c/8166c8ce-e0c5-479b-8467-164139b9191c"
-  );
+  await db.initializeDataBase();
   await db.printData();
 });
 
@@ -49,9 +43,10 @@ search_box.addEventListener("keyup", async function (event) {
       let resultElement = document.createElement("div");
       resultElement.classList.add("result");
       resultElement.innerHTML = `
-      <a href="${link}">
+      <a href="${link}" target="_blank">
         <h3>${title}</h3>
       </a>
+      <p>Price: </p>
       <p>${content}</p>
       <img src="${imagePath}" alt="Image not Found">`;
       results_container.appendChild(resultElement);

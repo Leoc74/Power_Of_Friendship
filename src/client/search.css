@@ -137,6 +137,7 @@ label.custom-label {
 #search-container label[for="search-box"] {
     margin-right: 10px; /* Add space between label and input */
     font-size: 20px; /* Increase font size */
+    font-family: beba;
     color: white; /* Text color */
     font-weight: bold; /* Bold font weight */
 }
