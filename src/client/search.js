@@ -8,9 +8,8 @@ let search_box = document.getElementById("search-box");
 let results_container = document.getElementById("results-container");
 
 window.addEventListener("load", async () => {
-  await db.printData();
+  //await db.printData();
   await db.initializeDataBase();
-  await db.printData();
 });
 
 /**
@@ -34,9 +33,9 @@ search_box.addEventListener("keyup", async function (event) {
   if (event.key === "Enter") {
     results_container.innerHTML = "";
     let results = await db.getAllProducts();
-    console.log(results.rows);
     for (let result of results.rows) {
       let title = result.doc.title;
+      let price = result.doc.price;
       let content = result.doc.content;
       let imagePath = result.doc.imagePath;
       let link = result.doc.link;
@@ -46,7 +45,7 @@ search_box.addEventListener("keyup", async function (event) {
       <a href="${link}" target="_blank">
         <h3>${title}</h3>
       </a>
-      <p>Price: </p>
+      <p>Price: ${price}</p>
       <p>${content}</p>
       <img src="${imagePath}" alt="Image not Found">`;
       results_container.appendChild(resultElement);
