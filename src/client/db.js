@@ -2,12 +2,21 @@
 
 const db = new PouchDB("search-data");
 
+const viewDB = new PouchDB("view-data");
+
+/**
+ * Prints Data for Testing purposes
+ */
 export async function printData() {
   //console.log(data);
   let results = await db.allDocs({ include_docs: true, attachments: true });
   console.log(results.rows);
 }
 
+/**
+ * Retrieves a document from the database
+ * @param {number} id Specifies the id of the document
+ */
 async function getDocument(id) {
   try {
     const doc = await db.get(id);
@@ -17,6 +26,13 @@ async function getDocument(id) {
   }
 }
 
+/**
+ * Checks if a document exists within the database
+ * @async
+ * @param {number} id The id of the document
+ * @returns {boolean} if the document exists
+ * @throws {Error} if failed to connect to database
+ */
 async function checkDocExist(id) {
   try {
     await db.get(id);
@@ -60,11 +76,18 @@ export async function saveProduct(id, title, price, content, imagePath, link) {
   }
 }
 
+/**
+ * Returns a list of all products within the database
+ * @returns
+ */
 export async function getAllProducts() {
   let results = db.allDocs({ include_docs: true, attachments: true });
   return results;
 }
 
+/**
+ * Initializes the Mock Data within the database.
+ */
 export async function initializeDataBase() {
   saveProduct(
     "0",
