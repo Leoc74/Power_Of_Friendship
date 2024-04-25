@@ -7,5 +7,7 @@ in /client/
   login.html is the login page of the website
   search.html is the search results page of the website
 
+  Navigate to these different pages by using the Nav bar from the Home Page.
+
 to run page:
 npm run milestone-02
