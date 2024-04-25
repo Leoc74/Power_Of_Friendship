@@ -4,6 +4,25 @@ const db = new PouchDB("search-data");
 
 const viewDB = new PouchDB("view-data");
 
+export async function getCurrentView() {
+  try {
+    let view = await viewDB.get("currView");
+    console.log(view);
+    return view;
+  } catch (error) {
+    if (error.name === "not_found") {
+      let view = { _id: "currView", view: "" };
+      viewDB.put(view);
+      return view;
+    } else {
+      throw error;
+    }
+  }
+}
+export async function updateCurrentView(doc) {
+  await viewDB.put(doc);
+}
+
 /**
  * Prints Data for Testing purposes
  */
