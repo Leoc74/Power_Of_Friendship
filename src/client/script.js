@@ -9,6 +9,12 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById(viewId).style.display = "block";
   }
 
+  //Filters for filter dropdown on search screen.
+  const womenFilter = document.getElementById("womenFilter");
+  const menFilter = document.getElementById("menFilter");
+  const kidFilter = document.getElementById("kidFilter");
+  const plusFilter = document.getElementById("plusFilter");
+  const filters = [womenFilter, menFilter, kidFilter, plusFilter];
   document
     .getElementById("home")
     .addEventListener("click", () => navigate("homeView"));
@@ -20,7 +26,13 @@ document.addEventListener("DOMContentLoaded", () => {
     .addEventListener("click", () => navigate("aboutView"));
   document
     .getElementById("shop")
-    .addEventListener("click", () => navigate("search-view"));
+    .addEventListener("click", () => {
+      //resets the filters to empty/unselected
+      for(let f of filters){
+        f.checked = false;
+      }
+      navigate("search-view")}
+    );
 
   let classNames = ["woman", "man", "kid", "plus"];
   for (let c of classNames) {
@@ -33,7 +45,25 @@ document.addEventListener("DOMContentLoaded", () => {
   function sendToSearchPage(className) {
     let classCollection = document.getElementsByClassName(className);
     for (let c of classCollection) {
-      c.addEventListener("click", () => navigate("search-view"));
+      c.addEventListener("click", function() {
+        //closure so className is specific
+        for(let f of filters){
+          f.checked = false;
+        }
+        if(className=== "woman"){
+          womenFilter.checked = true;
+        }
+        else if(className=== "man"){
+          menFilter.checked = true;
+        }
+        else if(className=== "kid"){
+          kidFilter.checked = true;
+        }
+        else if(className=== "plus"){
+          plusFilter.checked = true;
+        }
+        navigate("search-view")
+      });
     }
   }
 
