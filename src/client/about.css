@@ -25,7 +25,9 @@
 }
 
 #overview{
+    margin-top: -20px;
     color: rgba(0,0,0,.4);
+    font-weight: bold;
 }
 
 #grid-container-about{
@@ -38,7 +40,7 @@
 .grid-elem {
     padding: 10px;
     padding-inline-end: 0px;
-    background-color: rgb(222, 112, 112); /* border shorthand */
+    background-color: rgb(174, 201, 178); /* border shorthand */
     margin: 10px;
     display: flex;
     flex-direction: column;
