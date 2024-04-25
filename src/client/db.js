@@ -7,7 +7,6 @@ const viewDB = new PouchDB("view-data");
 export async function getCurrentView() {
   try {
     let view = await viewDB.get("currView");
-    console.log(view);
     return view;
   } catch (error) {
     if (error.name === "not_found") {
