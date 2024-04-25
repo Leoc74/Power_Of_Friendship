@@ -137,7 +137,7 @@ label.custom-label {
 #search-container label[for="search-box"] {
     margin-right: 10px; /* Add space between label and input */
     font-size: 20px; /* Increase font size */
-    color: black; /* Text color */
+    color: white; /* Text color */
     font-weight: bold; /* Bold font weight */
 }
 
@@ -231,34 +231,38 @@ label.custom-label {
 .dropdown {
     position: relative;
     display: inline-block;
+    z-index: 3; /* Ensure the dropdown is above other elements */
 }
-
 
 /* Dropdown content (hidden by default) */
 .dropdown-content {
-    width: 100%;
+    width: 160px; /* Adjust width as needed */
     display: none;
     position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.568); /* Match the background color of your navbar */
+    border-radius: 5px; /* Add border-radius for rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+    z-index: 2; /* Ensure the dropdown content is above other elements */
+    top: 35px; /* Adjust vertical position */
+    right: 0; /* Align with the right edge of the dropdown container */
 }
 
 /* Links inside the dropdown */
-.dropdown-content label{
-    color: black;
+.dropdown-content label {
+    color: var(--white); /* Match text color to your page */
     padding: 12px 16px;
     text-decoration: none;
     display: block;
+    transition: background-color 0.3s ease; /* Add transition for hover effect */
 }
 
 /* Change color of dropdown links on hover */
 .dropdown-content label:hover {
-    background-color: #ddd;
+    background-color: rgba(188, 188, 188, 0.5); /* Match hover background color to your page */
 }
 
 /* Show the dropdown content when the button is hovered over */
 .dropdown:hover .dropdown-content {
     display: block;
 }
+
