@@ -35,15 +35,6 @@ header {
     font-size: 23px;
 }
 
-.navBarGrid a {
-    text-decoration:none;
-    color: #333;
-    padding: 10px 20px;
-}
-
-.navBarGrid a:hover {
-    background-color: #ddd;
-}
 
 #homeSearchDiv{
     /*upper padding */
@@ -80,14 +71,13 @@ nav {
     font-family: 'Roboto', sans-serif;
     z-index: 2;
     width: 100%;
-    
   }
   
   .nav-left {
     color:#C0C5C1;
     text-decoration: none;
     font-size: 20px;
- 
+    cursor: pointer;
   }
   
   .nav-right {
@@ -100,7 +90,7 @@ nav {
     transition: color 0.3s ease;
     font-size: 20px;
     position: relative;
-    
+    cursor: pointer;
     
   }
   #profile{
