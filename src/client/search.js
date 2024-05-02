@@ -8,15 +8,8 @@ let search_box = document.getElementById("search-box");
 let results_container = document.getElementById("results-container");
 
 window.addEventListener("load", async () => {
-  await db.printData();
-  await db.saveProduct(
-    "3",
-    "test title",
-    "test content",
-    "images/testImg.jpg",
-    "https://chat.openai.com/c/8166c8ce-e0c5-479b-8467-164139b9191c"
-  );
-  await db.printData();
+  //await db.printData();
+  await db.initializeDataBase();
 });
 
 /**
@@ -40,18 +33,19 @@ search_box.addEventListener("keyup", async function (event) {
   if (event.key === "Enter") {
     results_container.innerHTML = "";
     let results = await db.getAllProducts();
-    console.log(results.rows);
     for (let result of results.rows) {
       let title = result.doc.title;
+      let price = result.doc.price;
       let content = result.doc.content;
       let imagePath = result.doc.imagePath;
       let link = result.doc.link;
       let resultElement = document.createElement("div");
       resultElement.classList.add("result");
       resultElement.innerHTML = `
-      <a href="${link}">
+      <a href="${link}" target="_blank">
         <h3>${title}</h3>
       </a>
+      <p>Price: ${price}</p>
       <p>${content}</p>
       <img src="${imagePath}" alt="Image not Found">`;
       results_container.appendChild(resultElement);

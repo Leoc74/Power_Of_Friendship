@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="search.css">
     <link rel="stylesheet" href="login.css">
     <link rel = "stylesheet" href = "about.css">
-    <script src="script.js" defer></script>
+    <script type="module" src="script.js" defer></script>
     <script type="module" src="search.js" defer></script>
     <!-- To import PouchDB below -->
     <script src="//cdn.jsdelivr.net/npm/pouchdb@8.0.1/dist/pouchdb.min.js"></script>
@@ -17,16 +17,16 @@
 </head>
 <body>
     <nav>
-        <a href="index.html" class="nav-left" id = "home">P r i x</a>
+        <a class="nav-left" id = "home">P r i x</a>
         <div class="nav-right">
             <div class="nav-dropDown">
                 <a class="nav-link" id="shop">Shop</a>
                 
                 <div class="nav-dropDown-content">
-                    <a id="women">women</a>
-                    <a id="men">men</a>
-                    <a id="kid">kid</a>
-                    <a id="plus">plus</a>
+                    <a class="woman">women</a>
+                    <a class="man">men</a>
+                    <a class="kid">kid</a>
+                    <a class="plus">plus</a>
                 </div>
             </div>
             <a class="nav-link" id = "profile">About</a>
@@ -79,21 +79,21 @@
  
             
             <div class="clothes-select">
-                <div class="clothes" id="women">
+                <div class="clothes">
                     <img src="images/women-clothes.jpg">
-                    <a class="overlay-txt" id="woman">Woman</a>
+                    <a class="overlay-txt woman">Woman</a>
                 </div>
-                <div class="clothes" id="men">
+                <div class="clothes">
                     <img src="images/men-clothes.jpg">
-                    <a class="overlay-txt" id="man">Man</a>
+                    <a class="overlay-txt man">Man</a>
                 </div>
-                <div class="clothes" id="kid">
+                <div class="clothes">
                     <img src="images/kid-clothes.jpg">
-                    <a class="overlay-txt" id="kids">Kid</a>
+                    <a class="overlay-txt kid">Kid</a>
                 </div>
-                <div class="clothes" id="plus">
+                <div class="clothes">
                     <img src="images/plus-clothes.jpg">
-                    <a class="overlay-txt" id="pluses">Plus</a>
+                    <a class="overlay-txt plus">Plus</a>
                 </div>
             </div>
             
@@ -201,17 +201,21 @@
                   <input type="button" id="filter-button" value="Filter">
                   <div class="dropdown-content">
                       <label class="dropdown-item">
-                          <input type="checkbox" id="option1">
-                          Option 1
+                          <input type="checkbox" id="womenFilter">
+                          Women's
                       </label>
                       <label class="dropdown-item">
-                          <input type="checkbox" id="option2">
-                          Option 2
+                          <input type="checkbox" id="menFilter">
+                          Men's
                       </label>
                       <label class="dropdown-item">
-                          <input type="checkbox" id="option3">
-                          Option 3
+                          <input type="checkbox" id="kidFilter">
+                          Kid's
                       </label>
+                      <label class="dropdown-item">
+                        <input type="checkbox" id="plusFilter">
+                        Plus
+                    </label>
                   </div>
               </div>
               

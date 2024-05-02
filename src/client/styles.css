@@ -1,24 +1,3 @@
-/*CSS file for milestone 1*/
-/* 
-REQUIREMENTS
-
-1. **Element Selector Rule**: Define a CSS rule that targets a specific HTML element, 
- such as **`p`** or **`h1`**, to apply universal styling features like font size or text 
- color to all instances of that element within your document.
-2. **ID Selector Rule**: Craft a CSS rule targeting a unique id within your HTML document, 
- such as **`#overview`**, allowing you to apply specific styling to that section alone, distinguishing 
- it visually from other parts of the document.
-3. **Class Selector Rule**: Utilize a CSS rule applied to a class, enabling you to style 
- a group of elements that share the same class attribute. This is useful for applying consistent
- styling to elements that perform similar functions, like buttons or section headers.
-4. **Nested-Tag / Sub-Element Selector Rule**: Implement a CSS rule that targets elements
- within a specific context, for example, styling **`<a>`** tags differently when they appear
- within the **`<nav>`** element versus elsewhere in the document.
-5. **Pseudo-Class Selector Rule**: Include a rule that uses a pseudo-class, such as 
- **`a:hover`** or **`a:focus`**, to define styles for an element in a particular state. 
- This enhances the interactivity and accessibility of your document by providing visual cues to users.
-*/
-
 html {
     scroll-behavior: smooth;
 }
@@ -56,15 +35,6 @@ header {
     font-size: 23px;
 }
 
-.navBarGrid a {
-    text-decoration:none;
-    color: #333;
-    padding: 10px 20px;
-}
-
-.navBarGrid a:hover {
-    background-color: #ddd;
-}
 
 #homeSearchDiv{
     /*upper padding */
@@ -101,14 +71,13 @@ nav {
     font-family: 'Roboto', sans-serif;
     z-index: 2;
     width: 100%;
-    
   }
   
   .nav-left {
     color:#C0C5C1;
     text-decoration: none;
     font-size: 20px;
- 
+    cursor: pointer;
   }
   
   .nav-right {
@@ -121,7 +90,7 @@ nav {
     transition: color 0.3s ease;
     font-size: 20px;
     position: relative;
-    
+    cursor: pointer;
     
   }
   #profile{
