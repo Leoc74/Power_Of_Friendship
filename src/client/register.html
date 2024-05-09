@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prix: Home Page</title>
+    <link rel="stylesheet" href="register.css">
+    <!-- To import PouchDB below -->
+    <script src="//cdn.jsdelivr.net/npm/pouchdb@8.0.1/dist/pouchdb.min.js"></script>
+    <script src="https://kit.fontawesome.com/85c080bd45.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="nav-left" id = "home">P r i x</a>
+   </nav>
+        <div id="views">
+        <div id="aboutView" class="view">
+            <div id="register-view">
+                <h2 id="register-header">
+                    New Member Sign Up
+                </h2>
+                <form action="'/login" method="post">
+                <div class="form-group">
+                <label for="username"></label>
+                <input id="username" type="text" placeholder="Username">
+                </div>
+                <div class="form-group">
+                <label for="password"></label>
+                <input id="password" type="password" placeholder="Password">
+                </div>
+                <div class="already-registered-login">
+                <a class="already-registered">Already registered?</a>
+                <a href="index.html#about" class="login">Log In</a>
+                </div>
+                <button type="submit" class="signup-button">Sign Up</button>
+            </form>
+            </div>
+        </div>   
+      </div>
+</body>
+</html>

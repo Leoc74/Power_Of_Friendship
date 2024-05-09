@@ -1,0 +1,151 @@
+html {
+  scroll-behavior: smooth;
+}
+/*Fonts*/
+@font-face {
+  font-family: 'vougue';
+  src: url('fonts/Vogue.ttf') format('truetype')
+}
+@font-face {
+  font-family: 'bebas';
+  src:url('fonts/BebasNeue-Regular.ttf') format('truetype');
+}
+
+/* Global styles */
+body {
+  font-family: arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #cacaca;
+}
+
+/* Header styles */
+header {
+  background-color: rgb(222, 112, 112);
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Prix logo on left corner */
+#home{
+  padding-left: 10px;
+  width: 100px;
+  float: left;
+  z-index: 3;
+  font-family: bebas;
+  color:#C0C5C1;
+  text-decoration: none;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+/* change Prix color when hovering over */
+#home:hover{
+color: rgb(174, 201, 178);
+}
+
+/* nav bar */
+nav {
+position: fixed;
+background-color:rgba(0, 0, 0, 0.568);
+color:white ;
+padding: 20px;
+display: flex;
+justify-content: space-between;
+align-items: center; 
+font-family: 'Roboto', sans-serif;
+z-index: 2;
+width: 100%;
+top:0px;
+
+}
+
+/*styling "Login" above the form*/
+#register-header {
+  text-align: center; /*centers*/
+  color: rgb(174, 201, 178); /*font color*/
+  font-size: 40px; /*font size*/
+}
+
+/*styling the login box */
+#register-view {
+  position: relative;
+  top: 100px;
+  text-align: center; /* centers box */
+  width: 300px; /* sets width to 300px wide */
+  margin: 0 auto; /*sets top bottom margins to 0, and automatically centers left and right margins*/
+  padding: 20px; /* padding to 20px */
+  border: 1px solid #ccc; /* sets a solid 1 pixel thick border of color #ccc */
+  border-radius: 25px; /* rounds out the border */
+  box-shadow: 0 0 10px rgba(0,0,0,0.1); /* shadow of the box */
+  margin-top: 50px; /* brings the login box down 50 px */
+  background-color: #f2f2f2; /* background color of the box */
+}
+
+#register-view h2 {
+  text-align: center; /* centers Login */
+  margin-bottom: 20px; /* sets bottom margin to 20px */
+}
+
+/* styling the username and password fields */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block; /* ensures username and password have their own lines */
+  margin-bottom: 5px; /* sets bottom margin to 5px */
+}
+
+.form-group input[type="text"],
+.form-group input[type="password"] {
+  width: 100%; /* sets width of input */
+  padding: 10px; /* sets padding to 10px */
+  border: 1px solid #ccc; /* adds solid, 1 px border of color #ccc */
+  border-radius: 3px; /* rounds out border corners */
+  box-sizing: border-box; /* ensures username and password fields don't overlap Login box */
+}
+
+.signup-button {
+    width: 200px; /* sets width of login and google button */
+    padding: 10px; /* sets padding to 10px */
+    border: none; /* no border */
+    border-radius: 3px; /* rounds out corners */
+    cursor: pointer; /* makes mouse icon turn to hand for interactivity */
+}
+
+.signup-button {
+    margin-bottom: 5px; /* Add margin between buttons */
+    background-color: rgb(174, 201, 178); /* Button background color */
+    color: #fff; /* Button text color */
+    font-weight: bold; /* bolds text */
+}
+
+/* Button hover effect */
+.signup-button:hover {
+    opacity: 0.8; /* Reduce opacity on hover */
+}
+
+.already-registered-login {
+  display: flex; /* makes flex container */
+  justify-content: space-between;  /* Evenly spaces forgot password? and signup buttons */
+  margin-bottom: 10px; /* adds 10px margin to bottom */
+}
+
+.already-registered {
+  margin-left: 110px;
+}
+
+.login {
+  color: rgb(174, 201, 178); /* sets color of forgot password? and signup */
+  text-decoration: none; /* no underline */
+}
+
+.login:hover {
+  text-decoration: underline; /* underline when hovering over forgot password? and signup */
+}
+
+.login {
+  font-weight: bold; /* bolds text */
+}
