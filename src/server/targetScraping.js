@@ -15,8 +15,15 @@ async function scrapeTarget() {
 
         // Extract text content
         const items = await page.evaluate(() => {
-            const elements = Array.from(document.querySelectorAll('.styles_truncate__lcCbH'));
-            return elements.map(element => element.textContent);
+            //const elements = Array.from(document.querySelectorAll('.styles_truncate__lcCbH'));
+            const elements = Array.from(document.querySelectorAll('.styles_truncate__lcCbH a'));
+            return elements.map(element => {
+                return {
+                    textContent: element.textContent,
+                    href: "https://www.target.com" + element.getAttribute('href')
+                };
+            });
+            //return elements.map(element => element.textContent);
         });
 
         console.log(items);
