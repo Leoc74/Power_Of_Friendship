@@ -1,6 +1,6 @@
 import fetch from "node-fetch";
 
-async function scrapeNorthFace() {
+export async function scrapeNorthFace() {
   try {
     // Fetch data from the asos API endpoint
     const response = await fetch(

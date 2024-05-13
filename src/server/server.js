@@ -1,6 +1,7 @@
 import express from "express";
 import logger from "morgan";
 import * as db from "./db.js";
+import { scrapeNorthFace } from "./northface.js";
 
 const headerFields = { "Content-Type": "text/html" };
 
@@ -17,9 +18,12 @@ const searchQuery = async (response, searchText) => {
   try {
     //go through different functions
     //This returns the search values
+    const northfaceResults = scrapeNorthFace();
+    //console.log(northfaceResults);
+    return northfaceResults;
   } catch (error) {
     response.writeHead(404, headerFields);
-    response.write(`Search of "${searchText}" failed`);
+    response.write(`<h1>Search of "${searchText}" failed</h1>`);
     response.end();
   }
 };
@@ -34,6 +38,11 @@ app
   .route("/search")
   .get(async (request, response) => {
     const options = request.query;
-    searchQuery(response, options.name);
+    searchQuery(response, options.searchText);
   })
   .all(MethodNotAllowedHandler);
+
+//starts server
+app.listen(port, () => {
+  console.log(`Server started on port ${port}`);
+});

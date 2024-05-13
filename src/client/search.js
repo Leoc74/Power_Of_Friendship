@@ -1,4 +1,5 @@
 import * as db from "./db.js";
+import { scrapeNorthFace } from "../server/northface.js";
 
 let sort_button = document.getElementById("sort-button");
 let sort_button_increasing = true;
@@ -35,7 +36,14 @@ sort_button.addEventListener("click", function () {
 search_box.addEventListener("keyup", async function (event) {
   if (event.key === "Enter") {
     results_container.innerHTML = "";
-    let results = await db.getAllProducts();
+    console.log(event);
+    //DUMMY DATA: let results = await db.getAllProducts();
+    let searchText = search_box.value;
+    //TODO Doesn't work yet
+    // let results = await fetch(`${URL}/search?searchText=${searchText}`, {
+    //   method: "POST",
+    // });
+
     loadSearchResults(results, sort_button_increasing);
   }
 });
