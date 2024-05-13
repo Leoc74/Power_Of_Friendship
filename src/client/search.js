@@ -37,7 +37,8 @@ search_box.addEventListener("keyup", async function (event) {
   if (event.key === "Enter") {
     results_container.innerHTML = "";
     console.log(event);
-    //DUMMY DATA: let results = await db.getAllProducts();
+    //DUMMY DATA:
+    let results = await db.getAllProducts();
     let searchText = search_box.value;
     //TODO Doesn't work yet
     // let results = await fetch(`${URL}/search?searchText=${searchText}`, {
@@ -55,7 +56,7 @@ search_box.addEventListener("keyup", async function (event) {
  */
 function loadSearchResults(results, price_increasing) {
   results.rows.sort((a, b) => {
-    let x = parseFloat(a.doc.price.substring(1));
+    let x = parseFloat(a.doc.price.substring(1)); // Change to not use substring for real data
     let y = parseFloat(b.doc.price.substring(1));
     return price_increasing ? x - y : y - x;
   });
@@ -65,6 +66,13 @@ function loadSearchResults(results, price_increasing) {
     let content = result.doc.content;
     let imagePath = result.doc.imagePath;
     let link = result.doc.link;
+    /*
+    let title = result.title;
+    let price = result.price;
+    let content = not implimented yet;
+    let imagePath = result.imageUrl;
+    let link = result.productUrl;
+    */
     let resultElement = document.createElement("div");
     resultElement.classList.add("result");
     resultElement.innerHTML = `
@@ -88,7 +96,7 @@ function sortElements(price_increasing) {
     results.push(child);
   }
   results.sort((a, b) => {
-    let e1 = parseFloat(a.children[1].innerText.substring(8));
+    let e1 = parseFloat(a.children[1].innerText.substring(8)); //TODO change to 7 since $ is not in price anymore
     let e2 = parseFloat(b.children[1].innerText.substring(8));
     return price_increasing ? e1 - e2 : e2 - e1;
   });
