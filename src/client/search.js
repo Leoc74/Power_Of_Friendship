@@ -7,6 +7,8 @@ let search_box = document.getElementById("search-box");
 
 let results_container = document.getElementById("results-container");
 
+const URL = "http://localhost:3000"; // URL of our server
+
 window.addEventListener("load", async () => {
   //await db.printData();
   await db.initializeDataBase();
