@@ -20,7 +20,7 @@ async function scrapeNorthFace() {
                 const imageUrl = product.images;
                 const price = product.price.current; 
                 const title = product.name; 
-                const baseURL = 'https://www.https://www.thenorthface.com';
+                const baseURL = 'https://www.thenorthface.com';
                 const partialUrl = product.slug;
                 const productURL = baseURL + partialUrl;
 
