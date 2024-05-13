@@ -39,7 +39,7 @@ function checkLoggedIn(req, res, next) {
     next();
   } else {
     // Otherwise, redirect to the login page.
-    res.redirect('client/index.html');
+    res.redirect('/');
   }
 }
 
@@ -58,7 +58,7 @@ app.post(
   auth.authenticate('local', {
     // use username/password authentication
     successRedirect: '/private', // when we login, go to /private
-    failureRedirect: '/login', // otherwise, back to login
+    failureRedirect: '/', // otherwise, back to login
   })
 );
 
@@ -71,7 +71,7 @@ app.post(
 app.get('/logout', function(req, res, next){
   req.logout(function(err) {
     if (err) { return next(err); }
-    res.redirect('/index.html#homeView');
+    res.redirect('/');
   });
 });
 
@@ -84,7 +84,7 @@ app.get('/logout', function(req, res, next){
 app.post('/register', (req, res) => {
   const { username, password } = req.body;
   if (users.addUser(username, password)) {
-    res.redirect('/login');
+    res.redirect('/');
   } else {
     res.redirect('/register');
   }
