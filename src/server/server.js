@@ -1,6 +1,8 @@
 import express from "express";
 import logger from "morgan";
 import { scrapeNorthFace } from "./northface.js";
+import { scrapeASOS } from "./asosScraping.js";
+import { scrapeKohls } from "./kohlsScraping.js";
 
 const headerFields = { "Content-Type": "text/html" };
 
@@ -18,6 +20,7 @@ async function searchQuery(response, searchText) {
     //Go through different functions
     //This returns the search values
     const northfaceResults = await scrapeNorthFace();
+    console.log(northfaceResults);
     const northfaceJSON = JSON.stringify(northfaceResults);
     console.log(northfaceResults);
     response.writeHead(200, headerFields);
@@ -26,6 +29,7 @@ async function searchQuery(response, searchText) {
   } catch (error) {
     response.writeHead(404, headerFields);
     response.write(`<h1>Search of "${searchText}" failed</h1>`);
+    console.log(error);
     response.end();
   }
 }

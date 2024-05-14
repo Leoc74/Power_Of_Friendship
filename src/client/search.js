@@ -1,5 +1,4 @@
 import * as db from "./db.js";
-//import { scrapeNorthFace } from "../server/northface.js";
 
 let sort_button = document.getElementById("sort-button");
 let sort_button_increasing = true;
@@ -44,6 +43,7 @@ search_box.addEventListener("keyup", async function (event) {
     //DUMMY DATA:
     //let results = await db.getAllProducts();
     let searchText = search_box.value;
+    //TODO CHECK SEARCH IS NOT EMPTY
     let results = await fetch(`${URL}/search?searchText=${searchText}`, {
       method: "GET",
     });
@@ -75,16 +75,16 @@ function loadSearchResults(results, price_increasing) {
     let price = result.price;
     let content = "Not implimented yet";
     let imagePath = result.imageUrl;
-    let link = result.productURL;
-
-    console.log(`Link: ${link}`);
+    let productUrl = result.productUrl;
+    let siteName = result.siteName;
 
     let resultElement = document.createElement("div");
     resultElement.classList.add("result");
     resultElement.innerHTML = `
-    <a href="${link}" target="_blank">
+    <a href="${productUrl}" target="_blank">
       <h3>${title}</h3>
     </a>
+    <h4>From: ${siteName}</h4>
     <p class="price">Price: $${price}</p>
     <p>${content}</p>
     <img src="${imagePath}" alt="Image not Found">`;

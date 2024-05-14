@@ -18,17 +18,17 @@ export async function scrapeNorthFace() {
         //console.log(data.products[0].productTitle);
         const product = data.products[i];
 
-                // Extract product details
-                const imageUrl = product.images;
-                const price = product.price.current; 
-                const title = product.name; 
-                const baseURL = 'https://www.thenorthface.com';
-                const partialUrl = product.slug;
-                const productURL = baseURL + partialUrl;
-
+        // Extract product details
+        const imageUrl = product.images;
+        const price = product.price.current;
+        const title = product.name;
+        const baseURL = "https://www.thenorthface.com";
+        const partialUrl = product.slug;
+        const productUrl = baseURL + partialUrl;
+        const siteName = "The North Face";
 
         // Push product data to the 'products' array
-        products.push({ imageUrl, price, title, productURL });
+        products.push({ imageUrl, price, title, productUrl, siteName });
       }
     } else {
       throw new Error("Invalid response data format");
