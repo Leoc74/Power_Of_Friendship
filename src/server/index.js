@@ -30,6 +30,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 // Allow static file serving
 app.use(express.static('src/client'));
+app.use(express.static('src/client/private'));
 // Configure our authentication strategy
 auth.configure(app);
 // Our own middleware to check if the user is authenticated
@@ -42,6 +43,27 @@ function checkLoggedIn(req, res, next) {
     res.redirect('/');
   }
 }
+
+import fs from 'fs';
+import path from 'path';
+
+// Define route for serving private HTML page
+app.get('/private/:userID/', checkLoggedIn, (req, res) => {
+  // Read the HTML file
+  fs.readFile(path.resolve(__dirname, 'client/private/private.html'), 'utf8', (err, data) => {
+      if (err) {
+          // Handle error
+          console.error('Error reading HTML file:', err);
+          return res.status(500).send('Internal Server Error');
+      }
+
+      // Replace the placeholder with the actual username
+      const htmlWithUsername = data.replace('USERNAME', req.user);
+
+      // Send the modified HTML to the client
+      res.send(htmlWithUsername);
+  });
+});
 
 app.get('/', checkLoggedIn, (req, res) => {
   res.send('hello world');
@@ -67,6 +89,16 @@ app.post(
     failureRedirect: '/', // otherwise, back to login
   })
 );
+
+// After successful login, update the welcome message with the user's name
+app.post('/login', (req, res) => {
+  // Assuming you have a variable `username` containing the user's name
+  const username = req.body.username; // Adjust this based on how the username is sent from the login form
+
+  // Update the welcome message with the username
+  res.locals.username = username; // Pass the username to the view
+  res.redirect('/private');
+});
 
 // Handle logging out (takes us back to the login page).
 // app.get('/logout', (req, res) => {
@@ -112,22 +144,35 @@ app.get(
 );
 
 // A dummy page for the user.
+// app.get(
+//   '/private/:userID/',
+//   checkLoggedIn, // We also protect this route: authenticated...
+//   (req, res) => {
+//     // Verify this is the right user.
+//     if (req.params.userID === req.user) {
+//       res.writeHead(200, { 'Content-Type': 'text/html' });
+//       res.write('<H1>HELLO ' + req.params.userID + '</H1>');
+//       res.write('<br/><a href="/logout">click here to logout</a>');
+//       res.write('<br/><a href="/">click here to go back</a>');
+//       res.end();
+//     } else {
+//       res.redirect('/private/');
+//     }
+//   }
+// );
 app.get(
   '/private/:userID/',
   checkLoggedIn, // We also protect this route: authenticated...
   (req, res) => {
     // Verify this is the right user.
     if (req.params.userID === req.user) {
-      res.writeHead(200, { 'Content-Type': 'text/html' });
-      res.write('<H1>HELLO ' + req.params.userID + '</H1>');
-      res.write('<br/><a href="/logout">click here to logout</a>');
-      res.write('<br/><a href="/">click here to go back</a>');
-      res.end();
+      res.sendFile('client/private/private.html', { root: __dirname });
     } else {
       res.redirect('/private/');
     }
   }
 );
+
 
 app.get('*', (req, res) => {
   res.send('Error');

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prix: Home Page</title>
+    <link rel="stylesheet" href="private.css">
+    <link rel="stylesheet" href="search.css">
+    <script type="module" src="script.js" defer></script>
+    <script type="module" src="search.js" defer></script>
+    <!-- To import PouchDB below -->
+    <script src="//cdn.jsdelivr.net/npm/pouchdb@8.0.1/dist/pouchdb.min.js"></script>
+    <script src="https://kit.fontawesome.com/85c080bd45.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav>
+        <a class="nav-left" id = "home">P r i x</a>
+        <a class="nav-middle" id = "welcome">Welcome to Prix, USERNAME!</a>
+        <div class="nav-right">
+            
+                <a class="nav-link" id="shop">Shop</a>
+                
+                <div class="nav-dropDown-content">
+                    <a class="woman">women</a>
+                    <a class="man">men</a>
+                    <a class="kid">kid</a>
+                    <a class="plus">plus</a>
+                </div>
+            
+            <a class="nav-link" id="logout" href="/logout">Logout</a>
+        </div>
+    
+
+</nav>
+
+    
+
+    <div id="views">      
+        <div id="homeView" class="view">
+            <div class="bg1">
+                <div id = "prixTitle"> The Price Comparison Engine</div>
+                </div>
+               
+                
+            
+                 <div class="sale-box">
+                 </div>
+            <div class="container">
+                
+            
+               <div class="box1">
+                    <div class="section-header">
+                        <h2>What is Prix? </h2>
+                    </div>
+                </div> 
+                <div class="box2">
+                <p id="prix-description">
+                    Prix is a very helpful web application that allows online shoppers to do all their browsing all in one site.
+                    Gone are the days of looking up the price of certain products one site at a time and manually comparing which
+                    one is cheapest, or has the best deals. With Prix, shoppers will be able to not only search for any product on
+                    the internet, but will also be given price comparisons, additional information on the product including shipping
+                    and/or possible deals, and the ability to filter out and sort products with given criteria. When the shopper finds
+                    a product they like, a link will be available to direct them to the external site for purchase. Find whatever your
+                    heart desires, all in one tab, with Prix.
+                </p></div>
+            </div>
+ 
+            
+            <div class="clothes-select">
+                <div class="clothes">
+                    <img src="/images/women-clothes.jpg">
+                    <a class="overlay-txt woman">Woman</a>
+                </div>
+                <div class="clothes">
+                    <img src="/images/men-clothes.jpg">
+                    <a class="overlay-txt man">Man</a>
+                </div>
+                <div class="clothes">
+                    <img src="/images/kid-clothes.jpg">
+                    <a class="overlay-txt kid">Kid</a>
+                </div>
+                <div class="clothes">
+                    <img src="/images/plus-clothes.jpg">
+                    <a class="overlay-txt plus">Plus</a>
+                </div>
+            </div>
+            
+        </div>
+        <div id="search-view" class="view" style="display: none">
+          <div id="search-container">
+              <label for="search-box" id="search-label">Search: </label>
+              <input type="text" id="search-box">
+  
+              <input type="button" id="sort-button" value="Sort by Price: ↑">
+              <div class="dropdown">
+                  <input type="button" id="filter-button" value="Filter">
+                  <div class="dropdown-content">
+                      <label class="dropdown-item">
+                          <input type="checkbox" id="womenFilter">
+                          Women's
+                      </label>
+                      <label class="dropdown-item">
+                          <input type="checkbox" id="menFilter">
+                          Men's
+                      </label>
+                      <label class="dropdown-item">
+                          <input type="checkbox" id="kidFilter">
+                          Kid's
+                      </label>
+                      <label class="dropdown-item">
+                        <input type="checkbox" id="plusFilter">
+                        Plus
+                    </label>
+                  </div>
+              </div>
+              
+          </div>
+          <div id="results-container">
+              
+          </div>
+      </div>
+    </div>    
+</body>
+</html>

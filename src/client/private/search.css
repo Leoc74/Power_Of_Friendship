@@ -1,0 +1,186 @@
+/*Defining color variables*/
+:root{
+    --white: #eae7dc;
+    --beige: #d8c3a5;
+    --gray: #cacaca;
+    --salmon: #e98074;
+    --gunmetal: #296b83;
+}
+  body{
+    background-color: var(--gray);
+    margin: 0px;
+  }
+
+#search-view{
+    position:relative;
+    top:100px;
+
+}
+
+label.custom-label {
+    font-family: bebas; /* Use BebasNeue font for custom label */
+}
+  #search-container {
+    margin: 20px 8px; /* Add space between navbar and search container */
+    /*background-color: #f2f2f2; /* Match the background color to the rest of the page */
+    background-color:rgba(0, 0, 0, 0.4);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+    text-align: center; /* Center the contents horizontally */
+}
+
+#search-container label[for="search-box"] {
+    margin-right: 10px; /* Add space between label and input */
+    font-size: 20px; /* Increase font size */
+    font-family: beba;
+    color: white; /* Text color */
+    font-weight: bold; /* Bold font weight */
+}
+
+#search-box {
+    color: #000;
+    border: none;
+    padding: 15px 15px; /* Increase padding to make the search box larger */
+    border-radius: 5px;
+    margin-right: 10px; /* Add margin to separate from the filter button */
+    width: 500px; /* Set the width of the text field */
+    padding: 12px; /* Add padding for better visual appearance */
+    border: 1px solid #ccc; /* Add a border to the text field */
+    border-radius: 5px; /* Add rounded corners to the border */
+    font-size: 20px; /* Set the font size of the text */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#search-container input[type="button"] {
+    /*background-color: rgb(222, 112, 112); /* Match the navbar color */
+    background-color: rgb(174, 201, 178);
+    color: #fff;
+    border: none;
+    padding: 10px 20px; 
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    max-width: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#search-container input[type="button"]:hover {
+    background-color: rgb(174, 201, 178, 0.6);
+}
+
+
+@media only screen and (max-width: 600px) {
+    #search-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: left;
+    }
+
+    #search-box {
+        width: 100%;
+    }
+
+    #sort-button,
+    #filter-button {
+        margin-top: 10px;
+        width: 100%;
+    }
+}
+
+#results-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Automatically fit columns with minimum 250px and maximum 1fr */
+    justify-content: center; /* Center items horizontally */
+    grid-gap: 2vw;
+
+    margin: 20px 8px; /* Add space between navbar and search container */
+    background-color: rgba(0, 0, 0, 0.4);
+    padding-top: 20px;
+    padding-right: 40px;
+    border-radius: 5px;
+    /*box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+}
+
+/* Style for each search result */
+.result {
+    background-color: var(--white);
+    border-radius: 5px;
+    padding: 10px;
+    margin-inline-start: 10px;
+    margin-inline-end: 100px;
+    margin-block-end: 10px;
+    text-align: center;
+    max-width: 100%; /* Ensure the result does not exceed the width of the container */
+    width: 100%; /* Ensure each result takes up the full width */
+    box-shadow: 5px 5px 10px rgba(0,0,0,.25);
+}
+.result img {
+    max-width: 100%; /* Ensure the image does not exceed the width of the result */
+    max-height: 200px; /* Limit the height of the image */
+    object-fit: cover; /* Maintain aspect ratio and fill container */
+    border-radius: 5px;
+}
+.result h3 {
+    margin-top: 10px; /* Add margin above the title */
+    color: black; /* Match text color to your page */
+    font-size: 20px; /* Adjust font size */
+}
+.result h4 {
+    color: black; /* Match text color to your page */
+    font-style: italic;
+    font-weight: 500;
+    text-decoration: underline;
+}
+.result a{
+    text-decoration: none;
+}
+
+/* Style for result description */
+.result p {
+    color: black; /* Match text color to your page */
+    font-size: 16px; /* Adjust font size */
+    margin-bottom: 10px; /* Add margin below each paragraph */
+}
+
+
+/* Dropdown container */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    z-index: 3; /* Ensure the dropdown is above other elements */
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+    width: 160px; /* Adjust width as needed */
+    display: none;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.568); /* Match the background color of your navbar */
+    border-radius: 5px; /* Add border-radius for rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+    z-index: 2; /* Ensure the dropdown content is above other elements */
+    top: 35px; /* Adjust vertical position */
+    right: 0; /* Align with the right edge of the dropdown container */
+}
+
+/* Links inside the dropdown */
+.dropdown-content label {
+    color: var(--white); /* Match text color to your page */
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s ease; /* Add transition for hover effect */
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content label:hover {
+    background-color: rgba(188, 188, 188, 0.5); /* Match hover background color to your page */
+}
+
+/* Show the dropdown content when the button is hovered over */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
