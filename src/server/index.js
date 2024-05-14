@@ -45,6 +45,12 @@ function checkLoggedIn(req, res, next) {
 
 app.get('/', checkLoggedIn, (req, res) => {
   res.send('hello world');
+  //trying to change the DOM so the login button is now profile
+  console.log('MADE IT HERE');
+  const loginNavBar = document.getElementById("about");
+  loginNavBar.textContent = "Profile";
+
+  
 });
 
 // Handle the URL /login (just output the login.html file).
@@ -115,6 +121,7 @@ app.get(
       res.writeHead(200, { 'Content-Type': 'text/html' });
       res.write('<H1>HELLO ' + req.params.userID + '</H1>');
       res.write('<br/><a href="/logout">click here to logout</a>');
+      res.write('<br/><a href="/">click here to go back</a>');
       res.end();
     } else {
       res.redirect('/private/');
