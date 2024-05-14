@@ -1,5 +1,5 @@
 import * as db from "./db.js";
-import { scrapeNorthFace } from "../server/northface.js";
+//import { scrapeNorthFace } from "../server/northface.js";
 
 let sort_button = document.getElementById("sort-button");
 let sort_button_increasing = true;
@@ -8,7 +8,7 @@ let search_box = document.getElementById("search-box");
 
 let results_container = document.getElementById("results-container");
 
-const URL = "http://localhost:3000"; // URL of our server
+const URL = "http://127.0.0.1:3000"; // URL of our server
 
 window.addEventListener("load", async () => {
   //await db.printData();
@@ -38,13 +38,13 @@ search_box.addEventListener("keyup", async function (event) {
     results_container.innerHTML = "";
     console.log(event);
     //DUMMY DATA:
-    let results = await db.getAllProducts();
+    //let results = await db.getAllProducts();
     let searchText = search_box.value;
     //TODO Doesn't work yet
-    // let results = await fetch(`${URL}/search?searchText=${searchText}`, {
-    //   method: "POST",
-    // });
-
+    let results = await fetch(`${URL}/search?searchText=${searchText}`, {
+      method: "GET",
+    });
+    //console.log(await results.json());
     loadSearchResults(results, sort_button_increasing);
   }
 });

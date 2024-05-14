@@ -18,7 +18,7 @@ const searchQuery = async (response, searchText) => {
   try {
     //go through different functions
     //This returns the search values
-    const northfaceResults = scrapeNorthFace();
+    const northfaceResults = await scrapeNorthFace();
     //console.log(northfaceResults);
     return northfaceResults;
   } catch (error) {
