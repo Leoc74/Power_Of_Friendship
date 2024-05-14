@@ -18,7 +18,7 @@ export async function scrapeASOS() {
         const product = data.products[i];
 
         // Extract product details
-        const imageUrl = product.additionalImageUrls[0];
+        const imageUrl = "https://" + product.additionalImageUrls[0];
         const price = product.price.current.value;
         const title = product.name;
         const baseURL = "https://www.asos.com/us";

@@ -19,7 +19,7 @@ async function searchQuery(response, searchText) {
   try {
     //Go through different functions
     //This returns the search values
-    const northfaceResults = await scrapeNorthFace();
+    const northfaceResults = await scrapeASOS();
     console.log(northfaceResults);
     const northfaceJSON = JSON.stringify(northfaceResults);
     console.log(northfaceResults);
