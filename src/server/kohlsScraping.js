@@ -1,58 +1,62 @@
-import fetch from "node-fetch";
+import fetch from 'node-fetch';   
+const urlList = {women:'https://www.kohls.com/catalog/womens-clothing.jsp?CN=Gender:Womens+Department:Clothing&cc=wms-TN2.0-S-womensclothing&kls_sbp=90330586387737637469065939933071974599&PPP=48&WS=48&S=1&sks=true&spa=1&ajax=true&gNav=false',
+                    men:'https://www.kohls.com/catalog/mens-clothing.jsp?CN=Gender:Mens+Department:Clothing&cc=mens-TN1.0-S-men&kls_sbp=90330586387737637469065939933071974599&PPP=48&WS=48&S=1&sks=true&spa=1&ajax=true&gNav=false',
+                    plus:null,
+                    kid:'https://www.kohls.com/catalog/kids-clothing.jsp?CN=AgeAppropriate:Kids+Department:Clothing&cc=kids-TN2.0-S-kidsshopall&kls_sbp=90330586387737637469065939933071974599&PPP=48&WS=48&S=1&sks=true&spa=1&ajax=true&gNav=false'}
 
-export async function scrapeKohls() {
-  try {
-    // Fetch data from the asos API endpoint
-    const response = await fetch(
-      "https://www.kohls.com/catalog/mens-clothing.jsp?CN=Gender:Mens+Department:Clothing&cc=mens-TN1.0-S-men&kls_sbp=90330586387737637469065939933071974599&PPP=48&WS=48&S=1&sks=true&spa=1&ajax=true&gNav=false"
-    );
-    const data = await response.json();
-    console.log(data);
+export async function scrapeKhols(search, filter = 'all') {
+    try {
+        let urls;
+        if (filter === 'all' || !urlList.hasOwnProperty(filter) || urlList[filter] === null) {
+            // If filter is 'all', not found in the urlList, or null, use all links except null values
+            urls = Object.values(urlList).filter(val => val !== null);
+        } else {
+            // If filter exists in the urlList and not null, use only that link
+            urls = [urlList[filter]];
+        }
+      const products1 = [];
+        // Loop through each URL
+       for (const url of urls) {
+    
+        // Fetch data from the asos API endpoint
+        const response = await fetch(urlList.men);
+        const data = await response.json();
+        //console.log(data.products[0]);
+        // Initialize an array to store product data
+        
+        // Check if products exist in the response data
+        if (data.products) {
+            // Extract data for the products
+            for (const product of data.products) {
+                // Check if product name contains the search string
+                if (product.productTitle.toLowerCase().includes(search.toLowerCase())) {
+                    // Extract product details
+                    const imageUrl = product.image.url;
+                    let price = null;
+                    if (product.pricing.salePrice != null){
+                        price = product.pricing.salePrice;}
+                    else {
+                        price = product.pricing.regularPrice;}
+                    const title = product.productTitle; 
+                    const baseURL = 'https://www.kohls.com';
+                    const partialUrl = product.seoURL;
+                    const productURL = baseURL + partialUrl;
 
-    // Initialize an array to store product data
-    const products = [];
-
-    // Check if products exists in the response data
-    if (data.products) {
-      // Extract data for the first 10 products
-      for (let i = 0; i < 10 && i < data.products.length; i++) {
-        //console.log(data.products[0].productTitle);
-        const product = data.products[i];
-
-        // Extract product details
-        const imageUrl = product.image.url;
-        const price = product.pricing.yourPriceInfo.yourPrice;
-        const title = product.productTitle;
-        const baseURL = "https://www.kohls.com/";
-        const partialUrl = product.seoURL;
-        const productUrl = baseURL + partialUrl;
-        const siteName = "Kohl's";
-
-        // Push product data to the 'products' array
-        products.push({ imageUrl, price, title, productUrl, siteName });
-      }
-    } else {
-      throw new Error("Invalid response data format");
+                    // Push product data to the 'products' array
+                    products1.push({ imageUrl, price, title, productURL });
+                }
+            }
+        } else {
+            return [];
+        }
     }
+        // Return the array of product data
+        return products1;
+    } catch (error) {
+        // Throw an error if fetching or processing data fails
+        throw new Error('Error fetching product data: ' + error.message);
+    }
+}               
+             
 
-    // Return the array of product data
-    console.log(products);
-    return products;
-  } catch (error) {
-    // Throw an error if fetching or processing data fails
-    throw new Error("Error fetching product data: " + error.message);
-  }
-}
 
-// Example usage
-//fetchProductData()
-// .then(products => {
-// Log the products data (for testing purposes)
-//console.log(products);
-
-// Perform further processing or display on website
-//})
-//.catch(error => {
-// Log any errors that occur during the fetching process
-// console.error(error.message);
-//});

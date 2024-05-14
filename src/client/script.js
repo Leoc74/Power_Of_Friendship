@@ -1,4 +1,8 @@
 import { getCurrentView, updateCurrentView } from "./db.js";
+import {scrapeAsos} from './asosScraping.js'
+import {scrapeKhols} from './kholsScraping.js'
+import {scrapeNorthFace} from './northface.js'
+import {scrapeTarget} from './targetScraping.js'
 
 document.addEventListener("DOMContentLoaded", async () => {
   async function navigate(viewId) {
@@ -20,6 +24,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   const menFilter = document.getElementById("menFilter");
   const kidFilter = document.getElementById("kidFilter");
   const plusFilter = document.getElementById("plusFilter");
+  
   const filters = [womenFilter, menFilter, kidFilter, plusFilter];
   document
     .getElementById("home")
