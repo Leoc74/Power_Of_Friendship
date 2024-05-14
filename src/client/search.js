@@ -1,5 +1,4 @@
 import * as db from "./db.js";
-import { scrapeNorthFace } from "../server/northface.js";
 
 let sort_button = document.getElementById("sort-button");
 let sort_button_increasing = true;
@@ -8,12 +7,16 @@ let search_box = document.getElementById("search-box");
 
 let results_container = document.getElementById("results-container");
 
-const URL = "http://localhost:3000"; // URL of our server
+const URL = "http://127.0.0.1:3000"; // URL of our server
 
-window.addEventListener("load", async () => {
-  //await db.printData();
-  await db.initializeDataBase();
-});
+/**
+ * Loads the dummy data
+ * NOT Implimented anymore
+ */
+// window.addEventListener("load", async () => {
+//   //await db.printData();
+//   await db.initializeDataBase();
+// });
 
 /**
  * Event Listener for the sort_button. Should sort the outputs by price increasing/decreasing when pressed
@@ -38,14 +41,16 @@ search_box.addEventListener("keyup", async function (event) {
     results_container.innerHTML = "";
     console.log(event);
     //DUMMY DATA:
-    let results = await db.getAllProducts();
+    //let results = await db.getAllProducts();
     let searchText = search_box.value;
-    //TODO Doesn't work yet
-    // let results = await fetch(`${URL}/search?searchText=${searchText}`, {
-    //   method: "POST",
-    // });
-
-    loadSearchResults(results, sort_button_increasing);
+    //TODO CHECK SEARCH IS NOT EMPTY
+    let results = await fetch(`${URL}/search?searchText=${searchText}`, {
+      method: "GET",
+    });
+    let products = JSON.parse(await results.text());
+    console.log(results);
+    console.log(products);
+    loadSearchResults(products, sort_button_increasing);
   }
 });
 
@@ -55,31 +60,32 @@ search_box.addEventListener("keyup", async function (event) {
  * @param {boolean} price_increasing Specifies true for prices in acsending order, false for descending order
  */
 function loadSearchResults(results, price_increasing) {
-  results.rows.sort((a, b) => {
-    let x = parseFloat(a.doc.price.substring(1)); // Change to not use substring for real data
-    let y = parseFloat(b.doc.price.substring(1));
+  results.sort((a, b) => {
+    let x = parseFloat(a.price);
+    let y = parseFloat(b.price);
     return price_increasing ? x - y : y - x;
   });
-  for (let result of results.rows) {
-    let title = result.doc.title;
-    let price = result.doc.price;
-    let content = result.doc.content;
-    let imagePath = result.doc.imagePath;
-    let link = result.doc.link;
-    /*
+  for (let result of results) {
+    // let title = result.doc.title;
+    // let price = result.doc.price;
+    // let content = result.doc.content;
+    // let imagePath = result.doc.imagePath;
+    // let link = result.doc.link;
     let title = result.title;
     let price = result.price;
-    let content = not implimented yet;
+    let content = "Not implimented yet";
     let imagePath = result.imageUrl;
-    let link = result.productUrl;
-    */
+    let productUrl = result.productUrl;
+    let siteName = result.siteName;
+
     let resultElement = document.createElement("div");
     resultElement.classList.add("result");
     resultElement.innerHTML = `
-    <a href="${link}" target="_blank">
+    <a href="${productUrl}" target="_blank">
       <h3>${title}</h3>
     </a>
-    <p class="price">Price: ${price}</p>
+    <h4>From: ${siteName}</h4>
+    <p class="price">Price: $${price}</p>
     <p>${content}</p>
     <img src="${imagePath}" alt="Image not Found">`;
     results_container.appendChild(resultElement);
@@ -96,7 +102,7 @@ function sortElements(price_increasing) {
     results.push(child);
   }
   results.sort((a, b) => {
-    let e1 = parseFloat(a.children[1].innerText.substring(8)); //TODO change to 7 since $ is not in price anymore
+    let e1 = parseFloat(a.children[1].innerText.substring(8));
     let e2 = parseFloat(b.children[1].innerText.substring(8));
     return price_increasing ? e1 - e2 : e2 - e1;
   });

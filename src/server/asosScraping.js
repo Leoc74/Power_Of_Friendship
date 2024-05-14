@@ -1,4 +1,4 @@
-import fetch from 'node-fetch';
+import fetch from "node-fetch";
 
 const urlList = {
     women: 'https://www.asos.com/api/product/search/v2/categories/16661?offset=144&key-search-mvtid=899035-web-new-in-product-type-mods&store=US&lang=en-US&currency=USD&rowlength=2&channel=mobile-web&country=US&keyStoreDataversion=q1av6t0-39&advertisementsPartnerId=100716&advertisementsVisitorId=97d2b7fe-07f8-44aa-8897-6519242eb4de&advertisementsOptInConsent=true&limit=72&region=MA',
