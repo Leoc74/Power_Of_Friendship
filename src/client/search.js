@@ -61,7 +61,7 @@ search_box.addEventListener("keyup", async function (event) {
  */
 function loadSearchResults(results, price_increasing) {
   results.sort((a, b) => {
-    let x = parseFloat(a.price); // Change to not use substring for real data
+    let x = parseFloat(a.price);
     let y = parseFloat(b.price);
     return price_increasing ? x - y : y - x;
   });
@@ -102,8 +102,8 @@ function sortElements(price_increasing) {
     results.push(child);
   }
   results.sort((a, b) => {
-    let e1 = parseFloat(a.children[1].innerText.substring(7)); //TODO change to 7 since $ is not in price anymore
-    let e2 = parseFloat(b.children[1].innerText.substring(7));
+    let e1 = parseFloat(a.children[1].innerText.substring(8));
+    let e2 = parseFloat(b.children[1].innerText.substring(8));
     return price_increasing ? e1 - e2 : e2 - e1;
   });
   results_container.innerHTML = "";
