@@ -77,6 +77,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   // Assuming your images are within a container with the class
   // 'image-container'
+  /*
   document.querySelectorAll(".image-container img").forEach((img) => {
     img.addEventListener("click", function () {
       const parent = this.parentNode;
@@ -118,5 +119,5 @@ prevArrow.addEventListener("click", () => {
     counter--;
     carouselSlide.style.transition = "transform 0.4s ease-in-out";
     carouselSlide.style.transform = "translateX(" + -size * counter + "px)";
-  }
+  }*/
 });

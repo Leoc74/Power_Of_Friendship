@@ -49,6 +49,7 @@
     "validate-html": "html-validate src/**/*.html",
     "milestone-01": "http-server src/docs/milestone-01 -p 3000 -c-1 -o -s",
     "milestone-02": "http-server src/client -p 3000 -c-1 -o -s",
+    "milestone-03": "node src/server/server.js",
     "start": "node src/server/index.js"
   },
   "devDependencies": {
@@ -57,12 +58,14 @@
     "prettier": "^3.2.5"
   },
   "dependencies": {
-    "dotenv": "^16.4.5",
-    "express": "^4.17.3",
+    "dotenv": "^16.0.0",
+    "express": "^4.19.2",
     "express-session": "^1.17.2",
+    "morgan": "^1.10.0",
     "passport": "^0.7.0",
     "passport-local": "^1.0.0",
     "pouchdb": "^8.0.1",
+    "puppeteer": "^22.8.0",
     "tailwindcss": "^3.4.3"
   }
 }

@@ -1,6 +1,5 @@
 import express from "express";
 import logger from "morgan";
-import * as db from "./db.js";
 import { scrapeNorthFace } from "./northface.js";
 
 const headerFields = { "Content-Type": "text/html" };
@@ -14,19 +13,22 @@ app.use(express.urlencoded({ extended: false }));
 //Tells server to look at files in client
 app.use(express.static("src/client"));
 
-const searchQuery = async (response, searchText) => {
+async function searchQuery(response, searchText) {
   try {
-    //go through different functions
+    //Go through different functions
     //This returns the search values
-    const northfaceResults = scrapeNorthFace();
-    //console.log(northfaceResults);
-    return northfaceResults;
+    const northfaceResults = await scrapeNorthFace();
+    const northfaceJSON = JSON.stringify(northfaceResults);
+    console.log(northfaceResults);
+    response.writeHead(200, headerFields);
+    response.write(northfaceJSON);
+    response.end();
   } catch (error) {
     response.writeHead(404, headerFields);
     response.write(`<h1>Search of "${searchText}" failed</h1>`);
     response.end();
   }
-};
+}
 //Used to handle unknown methods
 const MethodNotAllowedHandler = async (request, response) => {
   response.status(405).send("Method Not Allowed");
@@ -41,6 +43,10 @@ app
     searchQuery(response, options.searchText);
   })
   .all(MethodNotAllowedHandler);
+
+app.route("*").all(async (request, response) => {
+  response.status(404).send(`Not found: ${request.path}`);
+});
 
 //starts server
 app.listen(port, () => {
