@@ -65,8 +65,8 @@ search_box.addEventListener("keyup", async function (event) {
         method: "GET",
       }
     );
-    let products = JSON.parse(await results.text());
-    console.log(results);
+    let products = JSON.parse(await results.text()).flat();
+    //console.log(results);
     console.log(products);
     loadSearchResults(products, sort_button_increasing);
   }
@@ -119,7 +119,6 @@ function sortElements(price_increasing) {
     results.push(child);
   }
   results.sort((a, b) => {
-    console.log(a.children);
     let e1 = parseFloat(a.children[2].innerText.substring(8));
     let e2 = parseFloat(b.children[2].innerText.substring(8));
     return price_increasing ? e1 - e2 : e2 - e1;

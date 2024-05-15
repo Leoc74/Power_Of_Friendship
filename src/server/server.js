@@ -3,6 +3,7 @@ import logger from "morgan";
 import { scrapeNorthFace } from "./northface.js";
 import { scrapeAsos } from "./asosScraping.js";
 import { scrapeKohls } from "./kohlsScraping.js";
+import { scrapeTarget } from "./targetScraping.js";
 
 const headerFields = { "Content-Type": "text/html" };
 
@@ -19,12 +20,22 @@ async function searchQuery(response, searchText, filter) {
   try {
     //Go through different functions
     //This returns the search values
-    const northfaceResults = await scrapeAsos(searchText, filter);
-    console.log(northfaceResults);
+    const northfaceResults = await scrapeNorthFace(searchText, filter);
+    const asosResults = await scrapeAsos(searchText, filter);
+    const kohlsResults = await scrapeKohls(searchText, filter);
+    const targetResults = await scrapeTarget(searchText, filter);
+
+    const allResults = [northfaceResults, asosResults, kohlsResults];
+    const allJSON = JSON.stringify(allResults);
+
     const northfaceJSON = JSON.stringify(northfaceResults);
-    console.log(northfaceResults);
+    const asosJSON = JSON.stringify(asosResults);
+    const kohlsJSON = JSON.stringify(kohlsResults);
+    const targetJSON = JSON.stringify(targetResults);
+
+    //console.log(northfaceResults);
     response.writeHead(200, headerFields);
-    response.write(northfaceJSON);
+    response.write(allJSON);
     response.end();
   } catch (error) {
     response.writeHead(404, headerFields);
