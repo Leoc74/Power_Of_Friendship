@@ -67,7 +67,7 @@ search_box.addEventListener("keyup", async function (event) {
     );
     let products = JSON.parse(await results.text()).flat();
     //console.log(results);
-    console.log(products);
+    //console.log(products);
     loadSearchResults(products, sort_button_increasing);
   }
 });
