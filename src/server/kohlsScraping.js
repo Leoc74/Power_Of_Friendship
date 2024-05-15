@@ -42,7 +42,7 @@ export async function scrapeKohls(search, filter = "all") {
             const imageUrl = product.image.url;
             let price = null;
             if (product.pricing.salePrice != null) {
-              price = product.pricing.salePrice;
+              price = product.pricing.salePrice.substring(1);
             } else {
               price = product.pricing.regularPrice;
             }
