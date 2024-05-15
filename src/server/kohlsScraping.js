@@ -42,17 +42,18 @@ export async function scrapeKohls(search, filter = "all") {
             const imageUrl = product.image.url;
             let price = null;
             if (product.pricing.salePrice != null) {
-              price = product.pricing.salePrice;
+              price = product.pricing.salePrice.substring(1);
             } else {
               price = product.pricing.regularPrice;
             }
             const title = product.productTitle;
             const baseURL = "https://www.kohls.com";
             const partialUrl = product.seoURL;
-            const productURL = baseURL + partialUrl;
+            const productUrl = baseURL + partialUrl;
+            const siteName = "Kohl's";
 
             // Push product data to the 'products' array
-            products1.push({ imageUrl, price, title, productURL });
+            products1.push({ imageUrl, price, title, productUrl, siteName });
           }
         }
       } else {
