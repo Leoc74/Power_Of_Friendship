@@ -16,6 +16,12 @@ app.use(express.urlencoded({ extended: false }));
 //Tells server to look at files in client
 app.use(express.static("src/client"));
 
+/**
+ * Handles the search query resquested by the user. Sends a response back with the information containing all search results.
+ * @param {*} response
+ * @param {String} searchText
+ * @param {String} filter
+ */
 async function searchQuery(response, searchText, filter) {
   try {
     //Go through different functions

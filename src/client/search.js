@@ -12,7 +12,7 @@ let menFilter = document.getElementById("menFilter");
 let kidFilter = document.getElementById("kidFilter");
 let plusFilter = document.getElementById("plusFilter");
 
-const URL = "http://127.0.0.1:3000"; // URL of our server
+const URL = "http://localhost:3000"; // URL of our server
 
 /**
  * Loads the dummy data
