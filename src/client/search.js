@@ -7,7 +7,12 @@ let search_box = document.getElementById("search-box");
 
 let results_container = document.getElementById("results-container");
 
-const URL = "http://127.0.0.1:3000"; // URL of our server
+let womenFilter = document.getElementById("womenFilter");
+let menFilter = document.getElementById("menFilter");
+let kidFilter = document.getElementById("kidFilter");
+let plusFilter = document.getElementById("plusFilter");
+
+const URL = "http://localhost:3000"; // URL of our server
 
 /**
  * Loads the dummy data
@@ -39,16 +44,29 @@ sort_button.addEventListener("click", function () {
 search_box.addEventListener("keyup", async function (event) {
   if (event.key === "Enter") {
     results_container.innerHTML = "";
-    console.log(event);
+    //console.log(event);
     //DUMMY DATA:
     //let results = await db.getAllProducts();
     let searchText = search_box.value;
+    let filter = "";
+    if (womenFilter.checked) {
+      filter = "women";
+    } else if (menFilter.checked) {
+      filter = "men";
+    } else if (kidFilter.checked) {
+      filter = "kid";
+    } else if (plusFilter.checked) {
+      filter = "plus";
+    }
     //TODO CHECK SEARCH IS NOT EMPTY
-    let results = await fetch(`${URL}/search?searchText=${searchText}`, {
-      method: "GET",
-    });
-    let products = JSON.parse(await results.text());
-    console.log(results);
+    let results = await fetch(
+      `${URL}/search?searchText=${searchText}&filter=${filter}`,
+      {
+        method: "GET",
+      }
+    );
+    let products = JSON.parse(await results.text()).flat();
+    //console.log(results);
     console.log(products);
     loadSearchResults(products, sort_button_increasing);
   }
@@ -73,7 +91,7 @@ function loadSearchResults(results, price_increasing) {
     // let link = result.doc.link;
     let title = result.title;
     let price = result.price;
-    let content = "Not implimented yet";
+    //let content = "Not implimented yet";
     let imagePath = result.imageUrl;
     let productUrl = result.productUrl;
     let siteName = result.siteName;
@@ -86,7 +104,6 @@ function loadSearchResults(results, price_increasing) {
     </a>
     <h4>From: ${siteName}</h4>
     <p class="price">Price: $${price}</p>
-    <p>${content}</p>
     <img src="${imagePath}" alt="Image not Found">`;
     results_container.appendChild(resultElement);
   }
@@ -102,8 +119,8 @@ function sortElements(price_increasing) {
     results.push(child);
   }
   results.sort((a, b) => {
-    let e1 = parseFloat(a.children[1].innerText.substring(8));
-    let e2 = parseFloat(b.children[1].innerText.substring(8));
+    let e1 = parseFloat(a.children[2].innerText.substring(8));
+    let e2 = parseFloat(b.children[2].innerText.substring(8));
     return price_increasing ? e1 - e2 : e2 - e1;
   });
   results_container.innerHTML = "";

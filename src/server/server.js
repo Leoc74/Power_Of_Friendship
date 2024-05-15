@@ -1,8 +1,9 @@
 import express from "express";
 import logger from "morgan";
 import { scrapeNorthFace } from "./northface.js";
-import { scrapeASOS } from "./asosScraping.js";
+import { scrapeAsos } from "./asosScraping.js";
 import { scrapeKohls } from "./kohlsScraping.js";
+import { scrapeTarget } from "./targetScraping.js";
 
 const headerFields = { "Content-Type": "text/html" };
 
@@ -15,16 +16,37 @@ app.use(express.urlencoded({ extended: false }));
 //Tells server to look at files in client
 app.use(express.static("src/client"));
 
-async function searchQuery(response, searchText) {
+/**
+ * Handles the search query resquested by the user. Sends a response back with the information containing all search results.
+ * @param {*} response
+ * @param {String} searchText
+ * @param {String} filter
+ */
+async function searchQuery(response, searchText, filter) {
   try {
     //Go through different functions
     //This returns the search values
-    const northfaceResults = await scrapeASOS();
-    console.log(northfaceResults);
-    const northfaceJSON = JSON.stringify(northfaceResults);
-    console.log(northfaceResults);
+    const northfaceResults = await scrapeNorthFace(searchText, filter);
+    const asosResults = await scrapeAsos(searchText, filter);
+    const kohlsResults = await scrapeKohls(searchText, filter);
+    const targetResults = await scrapeTarget(searchText, filter);
+
+    const allResults = [
+      northfaceResults,
+      asosResults,
+      kohlsResults,
+      targetResults,
+    ];
+    const allJSON = JSON.stringify(allResults);
+
+    // const northfaceJSON = JSON.stringify(northfaceResults);
+    // const asosJSON = JSON.stringify(asosResults);
+    // const kohlsJSON = JSON.stringify(kohlsResults);
+    // const targetJSON = JSON.stringify(targetResults);
+
+    //console.log(northfaceResults);
     response.writeHead(200, headerFields);
-    response.write(northfaceJSON);
+    response.write(allJSON);
     response.end();
   } catch (error) {
     response.writeHead(404, headerFields);
@@ -44,7 +66,7 @@ app
   .route("/search")
   .get(async (request, response) => {
     const options = request.query;
-    searchQuery(response, options.searchText);
+    searchQuery(response, options.searchText, options.filter);
   })
   .all(MethodNotAllowedHandler);
 
