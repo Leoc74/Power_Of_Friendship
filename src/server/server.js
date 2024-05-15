@@ -25,13 +25,18 @@ async function searchQuery(response, searchText, filter) {
     const kohlsResults = await scrapeKohls(searchText, filter);
     const targetResults = await scrapeTarget(searchText, filter);
 
-    const allResults = [northfaceResults, asosResults, kohlsResults];
+    const allResults = [
+      northfaceResults,
+      asosResults,
+      kohlsResults,
+      targetResults,
+    ];
     const allJSON = JSON.stringify(allResults);
 
-    const northfaceJSON = JSON.stringify(northfaceResults);
-    const asosJSON = JSON.stringify(asosResults);
-    const kohlsJSON = JSON.stringify(kohlsResults);
-    const targetJSON = JSON.stringify(targetResults);
+    // const northfaceJSON = JSON.stringify(northfaceResults);
+    // const asosJSON = JSON.stringify(asosResults);
+    // const kohlsJSON = JSON.stringify(kohlsResults);
+    // const targetJSON = JSON.stringify(targetResults);
 
     //console.log(northfaceResults);
     response.writeHead(200, headerFields);
