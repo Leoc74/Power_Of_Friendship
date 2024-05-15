@@ -119,8 +119,9 @@ function sortElements(price_increasing) {
     results.push(child);
   }
   results.sort((a, b) => {
-    let e1 = parseFloat(a.children[1].innerText.substring(8));
-    let e2 = parseFloat(b.children[1].innerText.substring(8));
+    console.log(a.children);
+    let e1 = parseFloat(a.children[2].innerText.substring(8));
+    let e2 = parseFloat(b.children[2].innerText.substring(8));
     return price_increasing ? e1 - e2 : e2 - e1;
   });
   results_container.innerHTML = "";
