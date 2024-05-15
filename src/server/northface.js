@@ -30,7 +30,7 @@ export async function scrapeNorthFace(search, filter = "all") {
 
       // Initialize an array to store product data
 
-      console.log(data.products[0]);
+      //console.log(data.products[0]);
       // Check if products exist in the response data
       if (data.products) {
         // Extract data for the products
