@@ -1,7 +1,7 @@
 import express from "express";
 import logger from "morgan";
 import { scrapeNorthFace } from "./northface.js";
-import { scrapeASOS } from "./asosScraping.js";
+import { scrapeAsos } from "./asosScraping.js";
 import { scrapeKohls } from "./kohlsScraping.js";
 
 const headerFields = { "Content-Type": "text/html" };
@@ -15,11 +15,11 @@ app.use(express.urlencoded({ extended: false }));
 //Tells server to look at files in client
 app.use(express.static("src/client"));
 
-async function searchQuery(response, searchText) {
+async function searchQuery(response, searchText, filter) {
   try {
     //Go through different functions
     //This returns the search values
-    const northfaceResults = await scrapeASOS();
+    const northfaceResults = await scrapeAsos(searchText, filter);
     console.log(northfaceResults);
     const northfaceJSON = JSON.stringify(northfaceResults);
     console.log(northfaceResults);
@@ -44,7 +44,7 @@ app
   .route("/search")
   .get(async (request, response) => {
     const options = request.query;
-    searchQuery(response, options.searchText);
+    searchQuery(response, options.searchText, options.filter);
   })
   .all(MethodNotAllowedHandler);
 
