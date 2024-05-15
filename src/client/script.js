@@ -1,8 +1,4 @@
 import { getCurrentView, updateCurrentView } from "./db.js";
-import {scrapeAsos} from './asosScraping.js'
-import {scrapeKhols} from './kholsScraping.js'
-import {scrapeNorthFace} from './northface.js'
-import {scrapeTarget} from './targetScraping.js'
 
 document.addEventListener("DOMContentLoaded", async () => {
   async function navigate(viewId) {

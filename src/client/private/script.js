@@ -24,6 +24,9 @@ document.addEventListener("DOMContentLoaded", async () => {
   document
     .getElementById("home")
     .addEventListener("click", () => navigate("homeView"));
+  document
+    .getElementById("shop")
+    .addEventListener("click", () => navigate("search-view"));
   document.getElementById("shop").addEventListener("click", () => {
     //resets the filters to empty/unselected
     for (let f of filters) {
